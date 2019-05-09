@@ -7,7 +7,7 @@ setup(
     author_email='andnpatterson@gmail.com',
     packages=find_packages(exclude=['tests*']),
     install_requires=[],
-    version=.1,
+    version=0.1,
     license='MIT',
     description='A small set of fixed representations usually used in RL',
     long_description='todo',
