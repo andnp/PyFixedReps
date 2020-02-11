@@ -65,3 +65,12 @@ class TileCoder(BaseRepresentation):
         vec = np.zeros(self.features())
         vec[indices] = 1
         return vec
+
+class ScaledTileCoder(TileCoder):
+    def __init__(self, dim_ranges):
+        self.dim_ranges = dim_ranges
+
+    def encode(self, pos, action=None):
+        scaled = [ (pos[i] + dim_ranges[i][0]) / (dim_ranges[i][1] - dim_ranges[i][0]) for i in range(len(pos)) ]
+
+        return super().encode(scaled, action)
