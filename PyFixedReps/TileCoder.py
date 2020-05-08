@@ -3,16 +3,19 @@ from PyFixedReps.BaseRepresentation import BaseRepresentation
 
 class Tiling(BaseRepresentation):
     def __init__(self, params):
+        # number of dimensions to tile together
         self.dims = params['dims']
+        # number of tiles for each dimension
         self.tiles_per_dim = params['tiles']
+        # total number of tiles
         self.tiles = self.tiles_per_dim ** self.dims
-        self.tile_length = 1.0 / self.tiles_per_dim
+        # length of a tile in each dimension, small offset for numerical stability
+        self.tile_length = (1.0 / self.tiles_per_dim) + 1e-12
+        # precomputed index offset for each dimension
+        self.dim_offset = np.array([self.tiles_per_dim**d for d in range(self.dims)])
 
     def get_index(self, pos):
-        ind = 0
-        for d in range(self.dims):
-            ind += (pos[d] + 1e-12) // (self.tile_length + 1e-12) * self.tiles_per_dim**d
-
+        ind = np.sum((pos + 1e-12) // self.tile_length * self.dim_offset)
         return ind % self.tiles
 
     def features(self):
@@ -36,6 +39,8 @@ class TileCoder(BaseRepresentation):
 
         self.total_tiles = sum(map(lambda t: t.features(), self.tilings))
 
+    # construct tiling offsets
+    # defaults to evenly space tilings
     def _build_offset(self, n):
         dims = self.tilings[n].dims
         tile_length = self.tilings[n].tile_length
@@ -68,9 +73,10 @@ class TileCoder(BaseRepresentation):
 
 class ScaledTileCoder(TileCoder):
     def __init__(self, dim_ranges):
-        self.dim_ranges = dim_ranges
+        self.dim_ranges = np.array(dim_ranges)
 
     def encode(self, pos, action=None):
-        scaled = [ (pos[i] + dim_ranges[i][0]) / (dim_ranges[i][1] - dim_ranges[i][0]) for i in range(len(pos)) ]
+        pos = np.array(pos)
+        scaled = (pos + self.dim_ranges[:, 0]) / (self.dim_ranges[:, 1] - self.dim_ranges[:, 0])
 
         return super().encode(scaled, action)
