@@ -7,7 +7,7 @@ setup(
     author_email='andnpatterson@gmail.com',
     packages=find_packages(exclude=['tests*']),
     install_requires=[ 'numpy' ],
-    version=0.2,
+    version=0.1,
     license='MIT',
     description='A small set of fixed representations usually used in RL',
     long_description='todo',
