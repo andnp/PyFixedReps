@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from PyFixedReps.TileCoder import TileCoder
+from PyFixedReps import TileCoder
 
 class TestTileCoder(unittest.TestCase):
     def test_get_indices_1d_1tiling(self):
@@ -127,9 +127,23 @@ class TestTileCoder(unittest.TestCase):
             'tilings': 2,
             'tiles': 2,
             'actions': 2,
+            'scale_output': False,
         })
 
         rep = tc.encode([0, 0.2], 1)
         expected = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
 
+        self.assertListEqual(list(rep), expected)
+
+    def test_scaling(self):
+        tc = TileCoder({
+            'dims': 2,
+            'tilings': 2,
+            'tiles': 2,
+            'actions': 2,
+            'input_ranges': [(-1, 1), (2.1, 4.1)]
+        })
+
+        rep = tc.encode([-1, 2.5], 1)
+        expected = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0]
         self.assertListEqual(list(rep), expected)
