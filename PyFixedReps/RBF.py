@@ -1,5 +1,13 @@
 import numpy as np
+from numba import njit
 from PyFixedReps.BaseRepresentation import BaseRepresentation
+
+@njit(cache=True)
+def gaussian_dist(x: np.ndarray, centers: np.ndarray, width: float):
+    diff = x - centers
+    squared = np.sum(np.square(diff), axis=1)
+    features = np.exp(-1 * squared / np.square(width))
+    return features
 
 class RBF(BaseRepresentation):
     def __init__(self, params):
@@ -10,9 +18,5 @@ class RBF(BaseRepresentation):
         return len(self.centers)
 
     def encode(self, s, a = None):
-        features = np.zeros(self.features())
-        diff = s - self.centers
-        squared = np.sum(diff * diff, axis = 1)
-        features = np.exp(-1 * squared / np.square(self.width))
-
-        return features
+        s = np.array(s)
+        return gaussian_dist(s, self.centers, self.width)
