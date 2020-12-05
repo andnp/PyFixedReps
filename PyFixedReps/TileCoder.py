@@ -3,11 +3,11 @@ from typing import Optional, Sequence
 from numba import njit
 from PyFixedReps.BaseRepresentation import BaseRepresentation
 
-@njit
+@njit(cache=True)
 def tileLength(tiles_per_dim: int):
     return 1.0 / tiles_per_dim + 1e-12
 
-@njit
+@njit(cache=True)
 def getTilingIndex(dims: int, tiles_per_dim: int, pos: Sequence[float]):
     ind = 0
 
@@ -18,11 +18,11 @@ def getTilingIndex(dims: int, tiles_per_dim: int, pos: Sequence[float]):
 
     return ind % total_tiles
 
-@njit
+@njit(cache=True)
 def getTCIndices(dims: int, tiles: int, tilings: int, offsets: np.ndarray, pos: np.ndarray, action: Optional[int] = None):
     total_tiles = tiles**dims
 
-    index = np.zeros((tilings), dtype='int64')
+    index = np.empty((tilings), dtype='int64')
     for ntl in range(tilings):
         ind = getTilingIndex(dims, tiles, pos + offsets[ntl])
         index[ntl] = ind + total_tiles * ntl
@@ -32,7 +32,7 @@ def getTCIndices(dims: int, tiles: int, tilings: int, offsets: np.ndarray, pos: 
 
     return index
 
-@njit
+@njit(cache=True)
 def minMaxScaling(x: np.ndarray, mi: np.ndarray, ma: np.ndarray):
     return (x - mi) / (ma - mi)
 

@@ -1,4 +1,9 @@
-from typing import TypeVar
+from typing import Callable, Iterable, overload, TypeVar
 T = TypeVar('T')
 
+@overload
+def njit(cache: bool = False, parallel: bool = False) -> Callable[[T], T]: ...
+@overload
 def njit(f: T) -> T: ...
+
+def prange(num: int) -> Iterable[int]: ...
