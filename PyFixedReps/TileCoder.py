@@ -67,11 +67,11 @@ class TileCoder(BaseRepresentation):
         return np.ones(self.dims) * n * (self.tile_length / self.num_tiling)
 
     def get_indices(self, pos: npt.ArrayLike, action: Optional[int] = None):
-        pos = np.array(pos)
+        pos_: Array = np.array(pos, dtype=np.float_)
         if self.input_ranges is not None:
-            pos = minMaxScaling(pos, self.input_ranges[:, 0], self.input_ranges[:, 1])
+            pos = minMaxScaling(pos_, self.input_ranges[:, 0], self.input_ranges[:, 1])
 
-        return getTCIndices(self.dims, self.tiles, self.num_tiling, self.tiling_offsets, pos, action)
+        return getTCIndices(self.dims, self.tiles, self.num_tiling, self.tiling_offsets, pos_, action)
 
     def features(self):
         return int(self.total_tiles * self.num_action)

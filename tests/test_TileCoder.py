@@ -145,5 +145,5 @@ class TestTileCoder(unittest.TestCase):
         })
 
         rep = tc.encode([-1, 2.5], 1)
-        expected = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0]
+        expected = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.5, 0.0, 0.0, 0.0]
         self.assertListEqual(list(rep), expected)
