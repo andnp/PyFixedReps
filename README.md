@@ -5,9 +5,9 @@ This is a collection of unit tested implementations of common fixed representati
 ## Installing
 Can be installed using `pip` by including this in your `requirements.txt`:
 ```
-git+https://github.com/andnp/PyFixedReps@0.4#egg=PyFixedReps
+pip install PyFixedReps-andnp==1.0.0
 ```
-I highly recommend specifying the version number (which is actually a git tag) when installing, just to be sure I never accidentally break your build.
+I highly recommend specifying the version number when installing in order to ensure reproducibility of experiments.
 This library is fairly stable, so does not change often and there is little risk of missing an important change.
 
 ## Tile-coder
