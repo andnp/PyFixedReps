@@ -1,24 +1,24 @@
 import numpy as np
 from typing import Optional, Sequence
-from numba import njit
+from PyFixedReps._jit import try2jit
 from PyFixedReps.BaseRepresentation import BaseRepresentation
 
-@njit(cache=True)
+@try2jit
 def tileLength(tiles_per_dim: int):
-    return 1.0 / tiles_per_dim + 1e-12
+    return 1.0 / tiles_per_dim + 1e-16
 
-@njit(cache=True)
+@try2jit
 def getTilingIndex(dims: int, tiles_per_dim: int, pos: Sequence[float]):
     ind = 0
 
     tile_length = tileLength(tiles_per_dim)
     total_tiles = tiles_per_dim ** dims
     for d in range(dims):
-        ind += (pos[d] + 1e-12) // tile_length * tiles_per_dim**d
+        ind += (pos[d] + 1e-16) // tile_length * tiles_per_dim**d
 
     return ind % total_tiles
 
-@njit(cache=True)
+@try2jit
 def getTCIndices(dims: int, tiles: int, tilings: int, offsets: np.ndarray, pos: np.ndarray, action: Optional[int] = None):
     total_tiles = tiles**dims
 
@@ -27,12 +27,12 @@ def getTCIndices(dims: int, tiles: int, tilings: int, offsets: np.ndarray, pos: 
         ind = getTilingIndex(dims, tiles, pos + offsets[ntl])
         index[ntl] = ind + total_tiles * ntl
 
-    if action != None:
+    if action is not None:
         index += action * total_tiles * tilings
 
     return index
 
-@njit(cache=True)
+@try2jit
 def minMaxScaling(x: np.ndarray, mi: np.ndarray, ma: np.ndarray):
     return (x - mi) / (ma - mi)
 
@@ -51,7 +51,7 @@ class TileCoder(BaseRepresentation):
 
         self.dims:int = params['dims']
         self.tiles:int = params['tiles']
-        self.tile_length:float = 1.0 / self.tiles + 1e-12
+        self.tile_length:float = tileLength(self.tiles)
 
         self.tiling_offsets:np.ndarray = np.array([ self._build_offset(ntl) for ntl in range(self.num_tiling) ])
 
