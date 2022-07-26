@@ -25,6 +25,6 @@ setup(
     description="A small set of fixed representations usually used in RL",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     install_requires=["numba>=0.52.0", "numpy>=1.21.0"],
 )
