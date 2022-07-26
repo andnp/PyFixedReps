@@ -5,18 +5,24 @@ from PyFixedReps._jit import try2jit
 from PyFixedReps.BaseRepresentation import Array, BaseRepresentation
 
 @try2jit
-def tileLength(tiles_per_dim: int):
-    return 1.0 / tiles_per_dim + 1e-16
+def getAxisCell(x: float, tiles: int):
+    # for a 2-d space, this would get the "row" then "col" for a given coordinate
+    # for example: pos = (0.1, 0.3) with 5 tiles per dim would give row=1 and col=2
+
+    return int(np.floor(x * tiles))
 
 @try2jit
 def getTilingIndex(dims: int, tiles_per_dim: int, pos: Array):
     ind = 0
 
-    tile_length = tileLength(tiles_per_dim)
     total_tiles = tiles_per_dim ** dims
     for d in range(dims):
-        ind += (pos[d] + 1e-16) // tile_length * tiles_per_dim**d
+        # which cell am I in on this axis?
+        axis = getAxisCell(pos[d], tiles_per_dim)
+        already_seen = tiles_per_dim ** d
+        ind += axis * already_seen
 
+    # ensure we don't accidentally overflow into another tiling
     return ind % total_tiles
 
 @try2jit
@@ -52,7 +58,6 @@ class TileCoder(BaseRepresentation):
 
         self.dims: int = params['dims']
         self.tiles: int = params['tiles']
-        self.tile_length: float = tileLength(self.tiles)
 
         self.tiling_offsets: Array = np.array([ self._build_offset(ntl) for ntl in range(self.num_tiling) ])
 
@@ -64,12 +69,13 @@ class TileCoder(BaseRepresentation):
         if self.random_offset:
             return self.random.uniform(0, 1, size=self.dims)
 
-        return np.ones(self.dims) * n * (self.tile_length / self.num_tiling)
+        tile_length = 1.0 / self.tiles
+        return np.ones(self.dims) * n * (tile_length / self.num_tiling)
 
     def get_indices(self, pos: npt.ArrayLike, action: Optional[int] = None):
         pos_: Array = np.array(pos, dtype=np.float_)
         if self.input_ranges is not None:
-            pos = minMaxScaling(pos_, self.input_ranges[:, 0], self.input_ranges[:, 1])
+            pos_ = minMaxScaling(pos_, self.input_ranges[:, 0], self.input_ranges[:, 1])
 
         return getTCIndices(self.dims, self.tiles, self.num_tiling, self.tiling_offsets, pos_, action)
 

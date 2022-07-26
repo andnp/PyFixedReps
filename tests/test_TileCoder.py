@@ -21,7 +21,7 @@ class TestTileCoder(unittest.TestCase):
         self.assertListEqual(list(indices), [1])
 
         indices = tc.get_indices([1.0], 0)
-        self.assertListEqual(list(indices), [1])
+        self.assertListEqual(list(indices), [0])
 
         indices = tc.get_indices([0], 1)
         self.assertListEqual(list(indices), [2])
@@ -33,7 +33,7 @@ class TestTileCoder(unittest.TestCase):
         self.assertListEqual(list(indices), [3])
 
         indices = tc.get_indices([1.0], 1)
-        self.assertListEqual(list(indices), [3])
+        self.assertListEqual(list(indices), [2])
 
         # test out of bounds
         indices = tc.get_indices([1.1], 0)
@@ -53,10 +53,10 @@ class TestTileCoder(unittest.TestCase):
         indices = tc.get_indices([0, 0], 0)
         self.assertListEqual(list(indices), [0])
 
-        indices = tc.get_indices([1, 0], 0)
+        indices = tc.get_indices([0.99, 0], 0)
         self.assertListEqual(list(indices), [1])
 
-        indices = tc.get_indices([0, 1], 0)
+        indices = tc.get_indices([0, 0.99], 0)
         self.assertListEqual(list(indices), [2])
 
         indices = tc.get_indices([0.6, 0.8], 0)
@@ -65,7 +65,7 @@ class TestTileCoder(unittest.TestCase):
         indices = tc.get_indices([0, 0], 1)
         self.assertListEqual(list(indices), [4])
 
-        indices = tc.get_indices([1, 0], 1)
+        indices = tc.get_indices([0.99, 0], 1)
         self.assertListEqual(list(indices), [5])
 
     def test_get_indices_1d_2tiling(self):
@@ -79,7 +79,7 @@ class TestTileCoder(unittest.TestCase):
         indices = tc.get_indices([0], 0)
         self.assertListEqual(list(indices), [0, 2])
 
-        indices = tc.get_indices([1], 0)
+        indices = tc.get_indices([0.99], 0)
         self.assertListEqual(list(indices), [1, 2])
 
         indices = tc.get_indices([.3], 0)
@@ -99,7 +99,7 @@ class TestTileCoder(unittest.TestCase):
         indices = tc.get_indices([0, 0], 0)
         self.assertListEqual(list(indices), [0, 4])
 
-        indices = tc.get_indices([1, 1], 0)
+        indices = tc.get_indices([0.99, 0.99], 0)
         self.assertListEqual(list(indices), [3, 6])
 
         indices = tc.get_indices([.3, .3], 0)
@@ -145,5 +145,24 @@ class TestTileCoder(unittest.TestCase):
         })
 
         rep = tc.encode([-1, 2.5], 1)
-        expected = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.5, 0.0, 0.0, 0.0]
+        expected = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0]
         self.assertListEqual(list(rep), expected)
+
+    def test_tabular(self):
+        tc = TileCoder({
+            'dims': 2,
+            'tiles': 7,
+            'tilings': 1,
+            'input_ranges': [(0, 7), (0, 7)],
+        })
+
+        out = []
+        for i in range(7):
+            for j in range(7):
+                rep = tc.encode([j, i])
+                out.append(rep)
+
+        self.assertTrue(np.allclose(
+            np.stack(out),
+            np.eye(7 * 7),
+        ))
