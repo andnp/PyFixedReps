@@ -20,7 +20,7 @@ setup(
     author="Andy Patterson",
     author_email="andnpatterson@gmail.com",
     packages=find_packages(exclude=["tests*"]),
-    version="1.0.0",
+    version="2.0.0",
     license="MIT",
     description="A small set of fixed representations usually used in RL",
     long_description=long_description,
