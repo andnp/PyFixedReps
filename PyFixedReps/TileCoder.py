@@ -6,6 +6,7 @@ from PyFixedReps._jit import try2jit
 from PyFixedReps.BaseRepresentation import Array, BaseRepresentation
 
 Range = Tuple[float, float]
+RandomState = np.random.RandomState
 
 @dataclass
 class TileCoderConfig:
@@ -19,10 +20,9 @@ class TileCoderConfig:
     input_ranges: Optional[Sequence[Range]] = None
     bound: str = 'wrap'
 
-
 class TileCoder(BaseRepresentation):
-    def __init__(self, config: TileCoderConfig, rng=np.random):
-        self.random = rng
+    def __init__(self, config: TileCoderConfig, rng: Optional[RandomState] = None):
+        self.rng = rng
         self._c = c = config
 
         self._input_ranges = None
@@ -36,7 +36,8 @@ class TileCoder(BaseRepresentation):
     # defaults to evenly spaced tilings
     def _build_offset(self, n: int):
         if self._c.offset == 'random':
-            return self.random.uniform(0, 1, size=self._c.dims)
+            assert self.rng is not None
+            return self.rng.uniform(0, 1, size=self._c.dims)
 
         if self._c.offset == 'cascade':
             tile_length = 1.0 / self._c.tiles

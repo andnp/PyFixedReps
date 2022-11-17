@@ -114,7 +114,6 @@ class TestTileCoder(unittest.TestCase):
         self.assertListEqual(list(indices), [3, 7])
 
     def test_get_indices_2d_2tiling_random(self):
-        np.random.seed(42)
 
         config = TileCoderConfig(
             dims=2,
@@ -123,7 +122,9 @@ class TestTileCoder(unittest.TestCase):
             actions=1,
             offset='random',
         )
-        tc = TileCoder(config)
+
+        rng = np.random.RandomState(42)
+        tc = TileCoder(config, rng=rng)
 
         indices = tc.get_indices([0, 0], 0)
         self.assertListEqual(list(indices), [2, 7])
