@@ -1,7 +1,7 @@
 import numpy as np
 import numpy.typing as npt
 from dataclasses import dataclass
-from typing import Optional, Sequence, Tuple
+from typing import Optional, Sequence, Tuple, TypeVar
 from PyFixedReps._jit import try2jit
 from PyFixedReps.BaseRepresentation import Array, BaseRepresentation
 
@@ -13,10 +13,11 @@ class TileCoderConfig:
     tilings: int
     dims: int
 
-    offset: str = 'even'
+    offset: str = 'cascade'
     actions: int = 1
     scale_output: bool = True
     input_ranges: Optional[Sequence[Range]] = None
+    bound: str = 'wrap'
 
 
 class TileCoder(BaseRepresentation):
@@ -37,15 +38,23 @@ class TileCoder(BaseRepresentation):
         if self._c.offset == 'random':
             return self.random.uniform(0, 1, size=self._c.dims)
 
-        tile_length = 1.0 / self._c.tiles
-        return np.ones(self._c.dims) * n * (tile_length / self._c.tilings)
+        if self._c.offset == 'cascade':
+            tile_length = 1.0 / self._c.tiles
+            return np.ones(self._c.dims) * n * (tile_length / self._c.tilings)
+
+        if self._c.offset == 'even':
+            tile_length = 1.0 / self._c.tiles
+            i = n - (self._c.tilings / 2)
+            return np.ones(self._c.dims) * i * (tile_length / self._c.tilings)
+
+        raise Exception('Unknown offset type')
 
     def get_indices(self, pos: npt.ArrayLike, action: Optional[int] = None):
         pos_: Array = np.asarray(pos, dtype=np.float_)
         if self._input_ranges is not None:
             pos_ = minMaxScaling(pos_, self._input_ranges[:, 0], self._input_ranges[:, 1])
 
-        return getTCIndices(self._c.dims, self._c.tiles, self._c.tilings, self._tiling_offsets, pos_, action)
+        return getTCIndices(self._c.dims, self._c.tiles, self._c.tilings, self._c.bound, self._tiling_offsets, pos_, action)
 
     def features(self):
         return int(self._total_tiles * self._c.actions)
@@ -61,33 +70,39 @@ class TileCoder(BaseRepresentation):
         return vec
 
 @try2jit
-def getAxisCell(x: float, tiles: int):
+def getAxisCell(bound: str, x: float, tiles: int):
     # for a 2-d space, this would get the "row" then "col" for a given coordinate
     # for example: pos = (0.1, 0.3) with 5 tiles per dim would give row=1 and col=2
+    i = int(np.floor(x * tiles))
 
-    return int(np.floor(x * tiles))
+    if bound == 'wrap':
+        return i % tiles
+    elif bound == 'clip':
+        return clip(i, 0, tiles - 1)
+
+    raise Exception('Unknown bound type')
 
 @try2jit
-def getTilingIndex(dims: int, tiles_per_dim: int, pos: Array):
+def getTilingIndex(bound: str, dims: int, tiles_per_dim: int, pos: Array):
     ind = 0
 
     total_tiles = tiles_per_dim ** dims
     for d in range(dims):
         # which cell am I in on this axis?
-        axis = getAxisCell(pos[d], tiles_per_dim)
+        axis = getAxisCell(bound, pos[d], tiles_per_dim)
         already_seen = tiles_per_dim ** d
         ind += axis * already_seen
 
-    # ensure we don't accidentally overflow into another tiling
-    return ind % total_tiles
+    # ensure we don't overflow into another tiling
+    return clip(ind, 0, total_tiles - 1)
 
 @try2jit
-def getTCIndices(dims: int, tiles: int, tilings: int, offsets: Array, pos: Array, action: Optional[int] = None):
+def getTCIndices(dims: int, tiles: int, tilings: int, bound: str, offsets: Array, pos: Array, action: Optional[int] = None):
     total_tiles = tiles**dims
 
     index = np.empty((tilings), dtype='int64')
     for ntl in range(tilings):
-        ind = getTilingIndex(dims, tiles, pos + offsets[ntl])
+        ind = getTilingIndex(bound, dims, tiles, pos + offsets[ntl])
         index[ntl] = ind + total_tiles * ntl
 
     if action is not None:
@@ -98,3 +113,8 @@ def getTCIndices(dims: int, tiles: int, tilings: int, offsets: Array, pos: Array
 @try2jit
 def minMaxScaling(x: Array, mi: Array, ma: Array):
     return (x - mi) / (ma - mi)
+
+T = TypeVar('T', bound=float)
+@try2jit
+def clip(x: T, mi: T, ma: T) -> T:
+    return max(min(x, ma), mi)

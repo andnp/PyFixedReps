@@ -93,10 +93,11 @@ class TestTileCoder(unittest.TestCase):
 
     def test_get_indices_2d_2tiling(self):
         config = TileCoderConfig(
+            bound='clip',
             dims=2,
             tilings=2,
             tiles=2,
-            actions=2,
+            actions=1,
         )
         tc = TileCoder(config)
 
@@ -104,10 +105,10 @@ class TestTileCoder(unittest.TestCase):
         self.assertListEqual(list(indices), [0, 4])
 
         indices = tc.get_indices([0.99, 0.99], 0)
-        self.assertListEqual(list(indices), [3, 6])
+        self.assertListEqual(list(indices), [3, 7])
 
-        indices = tc.get_indices([.3, .3], 0)
-        self.assertListEqual(list(indices), [0, 7])
+        indices = tc.get_indices([.3, .2], 0)
+        self.assertListEqual(list(indices), [0, 5])
 
         indices = tc.get_indices([.51, .51], 0)
         self.assertListEqual(list(indices), [3, 7])
