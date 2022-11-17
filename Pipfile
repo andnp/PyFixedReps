@@ -9,7 +9,7 @@ numpy = ">=1.21.0"
 
 [dev-packages]
 flake8 = "*"
-mypy = "*"
+mypy = ">=0.981"
 commitizen = "*"
 pre-commit = "*"
 pipenv-setup = {extras = ["black"], version = "*"}
