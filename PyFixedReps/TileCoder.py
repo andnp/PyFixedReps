@@ -63,11 +63,12 @@ class TileCoder(BaseRepresentation):
     def encode(self, s: npt.ArrayLike, a: Optional[int] = None):
         indices = self.get_indices(s, a)
         vec = np.zeros(self.features())
-        vec[indices] = 1
 
+        v = 1.
         if self._c.scale_output:
-            vec /= float(self._c.tilings)
+            v = 1. / self._c.tilings
 
+        vec[indices] = v
         return vec
 
 @try2jit
