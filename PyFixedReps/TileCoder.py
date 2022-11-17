@@ -1,56 +1,62 @@
 import numpy as np
 import numpy.typing as npt
-from typing import Optional
+from dataclasses import dataclass
+from typing import Optional, Sequence, Tuple
 from PyFixedReps._jit import try2jit
 from PyFixedReps.BaseRepresentation import Array, BaseRepresentation
 
+Range = Tuple[float, float]
+
+@dataclass
+class TileCoderConfig:
+    tiles: int
+    tilings: int
+    dims: int
+
+    offset: str = 'even'
+    actions: int = 1
+    scale_output: bool = True
+    input_ranges: Optional[Sequence[Range]] = None
+
 
 class TileCoder(BaseRepresentation):
-    def __init__(self, params, rng=np.random):
+    def __init__(self, config: TileCoderConfig, rng=np.random):
         self.random = rng
-        self.num_tiling: int = params['tilings']
+        self._c = c = config
 
-        self.num_action: int = params.get('actions', 1)
-        self.random_offset: bool = params.get('random_offset', False)
-        self.input_ranges: Optional[Array] = params.get('input_ranges')
-        self.scale_output: bool = params.get('scale_output', True)
+        self._input_ranges = None
+        if c.input_ranges is not None:
+            self._input_ranges = np.array(c.input_ranges)
 
-        if self.input_ranges is not None:
-            self.input_ranges = np.array(self.input_ranges)
-
-        self.dims: int = params['dims']
-        self.tiles: int = params['tiles']
-
-        self.tiling_offsets: Array = np.array([ self._build_offset(ntl) for ntl in range(self.num_tiling) ])
-
-        self.total_tiles: int = self.num_tiling * self.tiles ** self.dims
+        self._tiling_offsets: Array = np.array([ self._build_offset(ntl) for ntl in range(c.tilings) ])
+        self._total_tiles: int = c.tilings * c.tiles ** c.dims
 
     # construct tiling offsets
-    # defaults to evenly space tilings
+    # defaults to evenly spaced tilings
     def _build_offset(self, n: int):
-        if self.random_offset:
-            return self.random.uniform(0, 1, size=self.dims)
+        if self._c.offset == 'random':
+            return self.random.uniform(0, 1, size=self._c.dims)
 
-        tile_length = 1.0 / self.tiles
-        return np.ones(self.dims) * n * (tile_length / self.num_tiling)
+        tile_length = 1.0 / self._c.tiles
+        return np.ones(self._c.dims) * n * (tile_length / self._c.tilings)
 
     def get_indices(self, pos: npt.ArrayLike, action: Optional[int] = None):
-        pos_: Array = np.array(pos, dtype=np.float_)
-        if self.input_ranges is not None:
-            pos_ = minMaxScaling(pos_, self.input_ranges[:, 0], self.input_ranges[:, 1])
+        pos_: Array = np.asarray(pos, dtype=np.float_)
+        if self._input_ranges is not None:
+            pos_ = minMaxScaling(pos_, self._input_ranges[:, 0], self._input_ranges[:, 1])
 
-        return getTCIndices(self.dims, self.tiles, self.num_tiling, self.tiling_offsets, pos_, action)
+        return getTCIndices(self._c.dims, self._c.tiles, self._c.tilings, self._tiling_offsets, pos_, action)
 
     def features(self):
-        return int(self.total_tiles * self.num_action)
+        return int(self._total_tiles * self._c.actions)
 
     def encode(self, s: npt.ArrayLike, a: Optional[int] = None):
         indices = self.get_indices(s, a)
         vec = np.zeros(self.features())
         vec[indices] = 1
 
-        if self.scale_output:
-            vec /= float(self.num_tiling)
+        if self._c.scale_output:
+            vec /= float(self._c.tilings)
 
         return vec
 
