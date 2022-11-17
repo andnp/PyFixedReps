@@ -4,44 +4,6 @@ from typing import Optional
 from PyFixedReps._jit import try2jit
 from PyFixedReps.BaseRepresentation import Array, BaseRepresentation
 
-@try2jit
-def getAxisCell(x: float, tiles: int):
-    # for a 2-d space, this would get the "row" then "col" for a given coordinate
-    # for example: pos = (0.1, 0.3) with 5 tiles per dim would give row=1 and col=2
-
-    return int(np.floor(x * tiles))
-
-@try2jit
-def getTilingIndex(dims: int, tiles_per_dim: int, pos: Array):
-    ind = 0
-
-    total_tiles = tiles_per_dim ** dims
-    for d in range(dims):
-        # which cell am I in on this axis?
-        axis = getAxisCell(pos[d], tiles_per_dim)
-        already_seen = tiles_per_dim ** d
-        ind += axis * already_seen
-
-    # ensure we don't accidentally overflow into another tiling
-    return ind % total_tiles
-
-@try2jit
-def getTCIndices(dims: int, tiles: int, tilings: int, offsets: Array, pos: Array, action: Optional[int] = None):
-    total_tiles = tiles**dims
-
-    index = np.empty((tilings), dtype='int64')
-    for ntl in range(tilings):
-        ind = getTilingIndex(dims, tiles, pos + offsets[ntl])
-        index[ntl] = ind + total_tiles * ntl
-
-    if action is not None:
-        index += action * total_tiles * tilings
-
-    return index
-
-@try2jit
-def minMaxScaling(x: Array, mi: Array, ma: Array):
-    return (x - mi) / (ma - mi)
 
 class TileCoder(BaseRepresentation):
     def __init__(self, params, rng=np.random):
@@ -91,3 +53,42 @@ class TileCoder(BaseRepresentation):
             vec /= float(self.num_tiling)
 
         return vec
+
+@try2jit
+def getAxisCell(x: float, tiles: int):
+    # for a 2-d space, this would get the "row" then "col" for a given coordinate
+    # for example: pos = (0.1, 0.3) with 5 tiles per dim would give row=1 and col=2
+
+    return int(np.floor(x * tiles))
+
+@try2jit
+def getTilingIndex(dims: int, tiles_per_dim: int, pos: Array):
+    ind = 0
+
+    total_tiles = tiles_per_dim ** dims
+    for d in range(dims):
+        # which cell am I in on this axis?
+        axis = getAxisCell(pos[d], tiles_per_dim)
+        already_seen = tiles_per_dim ** d
+        ind += axis * already_seen
+
+    # ensure we don't accidentally overflow into another tiling
+    return ind % total_tiles
+
+@try2jit
+def getTCIndices(dims: int, tiles: int, tilings: int, offsets: Array, pos: Array, action: Optional[int] = None):
+    total_tiles = tiles**dims
+
+    index = np.empty((tilings), dtype='int64')
+    for ntl in range(tilings):
+        ind = getTilingIndex(dims, tiles, pos + offsets[ntl])
+        index[ntl] = ind + total_tiles * ntl
+
+    if action is not None:
+        index += action * total_tiles * tilings
+
+    return index
+
+@try2jit
+def minMaxScaling(x: Array, mi: Array, ma: Array):
+    return (x - mi) / (ma - mi)
