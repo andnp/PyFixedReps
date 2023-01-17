@@ -3,7 +3,7 @@
 name = "cz_conventional_commits"
 version = "3.0.0"
 tag_format = "$version"
-version_files = ["pyproject.toml"]
+version_files = ["pyproject.toml", "README.md"]
 
 [tool.pdm]
 [[tool.pdm.source]]
