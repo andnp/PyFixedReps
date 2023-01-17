@@ -3,4 +3,46 @@
 name = "cz_conventional_commits"
 version = "2.0.0"
 tag_format = "$version"
-version_files = ["setup.py"]
+version_files = ["pyproject.toml"]
+
+[tool.pdm]
+[[tool.pdm.source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[tool.pdm.source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+[tool.pdm.dev-dependencies]
+dev = [
+    "mypy>=0.991",
+    "flake8>=6.0.0",
+    "commitizen>=2.39.1",
+    "pre-commit>=2.21.0",
+    "build>=0.10.0",
+    "twine>=4.0.2",
+]
+
+[tool.mypy]
+mypy_path = "typings"
+
+[project]
+name = "PyFixedReps"
+version = "2.0.0"
+description = ""
+authors = [
+    {name = "Andy Patterson", email = "andnpatterson@gmail.com"},
+]
+dependencies = [
+    "numpy>=1.23.5",
+    "numba>=0.56.4",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
