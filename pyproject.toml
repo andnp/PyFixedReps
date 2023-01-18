@@ -29,7 +29,7 @@ dev = [
 mypy_path = "typings"
 
 [project]
-name = "PyFixedReps"
+name = "PyFixedReps-andnp"
 version = "3.0.0"
 description = ""
 authors = [
