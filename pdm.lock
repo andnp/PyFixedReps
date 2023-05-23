@@ -63,7 +63,7 @@ summary = "Cross-platform colored terminal text."
 
 [[package]]
 name = "commitizen"
-version = "2.39.1"
+version = "2.40.0"
 requires_python = ">=3.6.2,<4.0.0"
 summary = "Python commitizen client tool"
 dependencies = [
@@ -150,7 +150,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "jaraco.classes"
+name = "jaraco-classes"
 version = "3.2.3"
 requires_python = ">=3.7"
 summary = "Utility functions for Python class constructs"
@@ -181,7 +181,7 @@ summary = "Store and access your passwords safely."
 dependencies = [
     "SecretStorage>=3.2; sys_platform == \"linux\"",
     "importlib-metadata>=4.11.4; python_version < \"3.12\"",
-    "jaraco.classes",
+    "jaraco-classes",
     "jeepney>=0.4.2; sys_platform == \"linux\"",
     "pywin32-ctypes>=0.2.0; sys_platform == \"win32\"",
 ]
@@ -422,6 +422,11 @@ requires_python = ">=3.7"
 summary = "ANSI color formatting for output in terminal"
 
 [[package]]
+name = "tile-coder"
+version = "0.1.0"
+summary = ""
+
+[[package]]
 name = "tomli"
 version = "2.0.1"
 requires_python = ">=3.7"
@@ -490,8 +495,10 @@ requires_python = ">=3.7"
 summary = "Backport of pathlib-compatible object wrapper for zip files"
 
 [metadata]
-lock_version = "4.1"
-content_hash = "sha256:06ad52fe2e9149cbb26f476f614f722385f538c28d9e5bcd70d540311153a393"
+lock_version = "4.2"
+cross_platform = true
+groups = ["default", "dev"]
+content_hash = "sha256:b67de97fe76bb25fd2cffaa9381a78feef60d02d0c8c3e7f79b8936894cd7bdf"
 
 [metadata.files]
 "argcomplete 2.0.0" = [
@@ -588,9 +595,9 @@ content_hash = "sha256:06ad52fe2e9149cbb26f476f614f722385f538c28d9e5bcd70d540311
     {url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
 ]
-"commitizen 2.39.1" = [
-    {url = "https://files.pythonhosted.org/packages/2f/84/76fbd7850082bcfeeef3f9f94b8122eaf33d7a5adaa9836949cf9c17ebde/commitizen-2.39.1-py3-none-any.whl", hash = "sha256:2678c51ed38676435a4ba02e164605b0aacfefcc3f7e0c8d11dd39e367e20577"},
-    {url = "https://files.pythonhosted.org/packages/68/f7/bae25705cf7566f6ac86d033abe7e90c8fac253b7abae25c32bd5cafc137/commitizen-2.39.1.tar.gz", hash = "sha256:1f4b77a6b6cf43fc75e7fc604081add66026a5031c2a5032b2b9e8202bc57d47"},
+"commitizen 2.40.0" = [
+    {url = "https://files.pythonhosted.org/packages/1d/32/45272adda791cb90eca6c3b2a3d1eb9bef2b2abe19a0dc6dca35965f4056/commitizen-2.40.0.tar.gz", hash = "sha256:8f1a09589ffb87bb17df17261423e88299bd63432dbfc4e6fc6657fea23dddc0"},
+    {url = "https://files.pythonhosted.org/packages/8c/f1/ef8db9723251fa3cff1812bc65f1129345bb508e80331e956486ee9c344a/commitizen-2.40.0-py3-none-any.whl", hash = "sha256:44b589869529c297d4ef594bb7560388d3367b3ae8af36b0664d2f51a28e8f87"},
 ]
 "commonmark 0.9.1" = [
     {url = "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
@@ -653,7 +660,7 @@ content_hash = "sha256:06ad52fe2e9149cbb26f476f614f722385f538c28d9e5bcd70d540311
     {url = "https://files.pythonhosted.org/packages/26/a7/9da7d5b23fc98ab3d424ac2c65613d63c1f401efb84ad50f2fa27b2caab4/importlib_metadata-6.0.0-py3-none-any.whl", hash = "sha256:7efb448ec9a5e313a57655d35aa54cd3e01b7e1fbcf72dce1bf06119420f5bad"},
     {url = "https://files.pythonhosted.org/packages/90/07/6397ad02d31bddf1841c9ad3ec30a693a3ff208e09c2ef45c9a8a5f85156/importlib_metadata-6.0.0.tar.gz", hash = "sha256:e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d"},
 ]
-"jaraco.classes 3.2.3" = [
+"jaraco-classes 3.2.3" = [
     {url = "https://files.pythonhosted.org/packages/60/28/220d3ae0829171c11e50dded4355d17824d60895285631d7eb9dee0ab5e5/jaraco.classes-3.2.3-py3-none-any.whl", hash = "sha256:2353de3288bc6b82120752201c6b1c1a14b058267fa424ed5ce5984e3b922158"},
     {url = "https://files.pythonhosted.org/packages/bf/02/a956c9bfd2dfe60b30c065ed8e28df7fcf72b292b861dca97e951c145ef6/jaraco.classes-3.2.3.tar.gz", hash = "sha256:89559fa5c1d3c34eff6f631ad80bb21f378dbcbb35dd161fd2c6b93f5be2f98a"},
 ]
@@ -984,6 +991,29 @@ content_hash = "sha256:06ad52fe2e9149cbb26f476f614f722385f538c28d9e5bcd70d540311
 "termcolor 2.2.0" = [
     {url = "https://files.pythonhosted.org/packages/aa/f4/8ddd8a684b4c005345f45740a449d93d0af7ccecd91319d0f4426cf08b36/termcolor-2.2.0-py3-none-any.whl", hash = "sha256:91ddd848e7251200eac969846cbae2dacd7d71c2871e92733289e7e3666f48e7"},
     {url = "https://files.pythonhosted.org/packages/e5/4e/b2a54a21092ad2d5d70b0140e4080811bee06a39cc8481651579fe865c89/termcolor-2.2.0.tar.gz", hash = "sha256:dfc8ac3f350788f23b2947b3e6cfa5a53b630b612e6cd8965a015a776020b99a"},
+]
+"tile-coder 0.1.0" = [
+    {url = "https://files.pythonhosted.org/packages/09/bf/096e6a61f242f015d6a9207350f800b3856272dfeb37e45304079edc20b1/tile_coder-0.1.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:37717e8a210d52be9547593765fc062476e4bd311b2c489a53f5d98637c8bb6e"},
+    {url = "https://files.pythonhosted.org/packages/1d/1c/b55f646b783b1faa2ce128c298aaea0ddb0613b6947577b576c31fab8eb9/tile_coder-0.1.0-cp38-none-win32.whl", hash = "sha256:dd83fbb0629d6454eae6ea679f71bf2ed974483a59bcb78daa99a084d470e34e"},
+    {url = "https://files.pythonhosted.org/packages/29/36/f59538a0eacf4cc49f5e313d1ca8ca7433e4e859fa0184907ea1da834645/tile_coder-0.1.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:f4903edf5e5a923c16fe6eb152e303b83c2c7b05d49d14fdd2a3b4f49d928629"},
+    {url = "https://files.pythonhosted.org/packages/39/15/780484eae5bf4a28bf0ea1654dc5bceb7fcdf56ee9420466959a9bb5ad81/tile_coder-0.1.0-cp311-cp311-macosx_10_7_x86_64.whl", hash = "sha256:75d9b9b14fe1233a8a234795ea3e0c063a32fef0410133df9793c15b220a44dc"},
+    {url = "https://files.pythonhosted.org/packages/3f/24/3bdd4d2264c9b81021088b9e3d388d014e4edb8f286f451e7e9cfb268b1a/tile_coder-0.1.0-cp310-cp310-macosx_10_7_x86_64.whl", hash = "sha256:be0f7798d3ec6207e7aaa6fa736f7a31e62e346901a73a57b5c41a3382307455"},
+    {url = "https://files.pythonhosted.org/packages/47/68/1026a44e66eff363f5f464396e5205e4cd432df39f007ea488eee45ffe43/tile_coder-0.1.0-cp311-none-win32.whl", hash = "sha256:d749052ff81c090cb5577f460b7dd7355e74146c98d1ce9c84cc75304b8159c8"},
+    {url = "https://files.pythonhosted.org/packages/47/9b/b47e1f85fbcc19b676ed2874ea4c7f2f8ceab6fa6b20a293fff9e0b51eee/tile_coder-0.1.0-cp311-none-win_amd64.whl", hash = "sha256:8f51f5f7454196e489e723c2ec46f8f7603ca0d16fe514aa2b235df677896cb4"},
+    {url = "https://files.pythonhosted.org/packages/57/b8/3a46961f5d97350f9ea48dc94b1929bea5fe7556dec9da99e229308e71ed/tile_coder-0.1.0-cp37-none-win_amd64.whl", hash = "sha256:0db9a16da2bc0941203a5b3e9161a272e7f8f88eb91cb2523f43cc19cb4c3ba5"},
+    {url = "https://files.pythonhosted.org/packages/62/ab/1db66bcb4e1ef0321b172d0de82402aa2aa53173957ede3868968e07f8bd/tile_coder-0.1.0-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:83e187cc3c0bc76367b72658d0e1d65609f3e908cddbb8ae7c8bcb4b0738b0af"},
+    {url = "https://files.pythonhosted.org/packages/6a/c9/ab952d748ce6c805ae632dde6cb96092e300fc5cca049782a43fc76938d1/tile_coder-0.1.0-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:34a00536eb44ad01c948fda54b7c81aeab131f7335522c21383aebb72a5670cb"},
+    {url = "https://files.pythonhosted.org/packages/74/83/97cf6e37b0ddeb0fe87cbac0adedc498e9b194d81e1c525c0c227df7f3df/tile_coder-0.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3a22b4e0223ac713c1d5d7d3f11c5cc862e7f523ccb8f74aba9c93309d7a2b12"},
+    {url = "https://files.pythonhosted.org/packages/76/d0/7527529005641c126ee9be7af3217bfa6a87f28c388f8c442c41d819fe06/tile_coder-0.1.0-cp310-cp310-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:584702c82873f30bded14ed9e7bdfc85c01b8999ca552a7afb2034a04fd5f73c"},
+    {url = "https://files.pythonhosted.org/packages/7a/23/ab3a980a6023486019141c6bae533c7766b83d37908a43381097af273c08/tile_coder-0.1.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:ac8b3c0599b8da35db72ca449758005ce18b79f5c3f90b532d18df5ebca48880"},
+    {url = "https://files.pythonhosted.org/packages/88/5e/2e23f93256481f137ab744342e338e6c11805af0943291e021fe28834889/tile_coder-0.1.0-cp38-none-win_amd64.whl", hash = "sha256:23708a9ba278361a6c839d022347b1a11518a10ae997fc25da069b35868ede78"},
+    {url = "https://files.pythonhosted.org/packages/8e/a3/20bce0597c2b10519b9f3ed4e95021eae7c3a24e1621e4bcf7690e2e8e97/tile_coder-0.1.0-cp310-none-win32.whl", hash = "sha256:a44436cb380ffa0b32c48d9c4bcf03253cef0f7a68a003ba7d46db3c2b8d1bf8"},
+    {url = "https://files.pythonhosted.org/packages/91/fd/da1cd127ce52e32eacd0b10607b7ae63d384e6d034352c22ae65695aaf53/tile_coder-0.1.0-cp39-none-win32.whl", hash = "sha256:795df32198704b0769c33d2b458eb723acd8ae287a4ab2ad1b960d8d732f485c"},
+    {url = "https://files.pythonhosted.org/packages/96/f7/2c0a01391d7d5778d721b1855ec60195843aa01da1c64a25f35868746d22/tile_coder-0.1.0-cp39-none-win_amd64.whl", hash = "sha256:4c3804b0ed4488497330b5be8c6895c26bc78409b572ea486879e5a3f885245f"},
+    {url = "https://files.pythonhosted.org/packages/9f/ec/72b982434e833d3a9aecfb49885c4133657f990e7ffe3b6feca995fb1ac4/tile_coder-0.1.0-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:895b2c53f3736f001a2cb38feafa4e0683493769a57d4761687a7623539af6d6"},
+    {url = "https://files.pythonhosted.org/packages/ab/7c/ecff75f97bbbed4e680bc501d8aa8a5fdec359d76fe1f80582711da9b0c7/tile_coder-0.1.0-cp37-none-win32.whl", hash = "sha256:eb255ba68a0ad57657affb7164a10c44257188d6ceac044b49221f5249183e03"},
+    {url = "https://files.pythonhosted.org/packages/ae/b7/f8885280158cf373bbd9c7ee9cf2a9f31d6ca4bdca25df538e492e1177e0/tile_coder-0.1.0.tar.gz", hash = "sha256:ab3f3f8fb51e6748849aa89e25f50fbcdbe7fd3bf2c197b49824925ff6dc55de"},
+    {url = "https://files.pythonhosted.org/packages/ef/be/7c9afbdb709ec794ad4ec4f0dd158d5ace97fa1253da54aca37da5307443/tile_coder-0.1.0-cp310-none-win_amd64.whl", hash = "sha256:93ec94aecbeab14d282c1b931db6f162f15f3c419fd57070cd7be8b0b665930a"},
 ]
 "tomli 2.0.1" = [
     {url = "https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},

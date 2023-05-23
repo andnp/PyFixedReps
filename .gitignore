@@ -6,5 +6,5 @@ __pycache__/
 env/
 dist/
 PyFixedReps_andnp*
-.pdm.toml
+.pdm-python
 .venv/
