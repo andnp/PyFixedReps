@@ -17,7 +17,7 @@ class TileCoderConfig:
     offset: str = 'cascade'
     scale_output: bool = True
     input_ranges: Optional[Sequence[Range | None]] = None
-    bound: str = 'wrap'
+    bound: str | Sequence[str] = 'clip'
 
 class TileCoder(BaseRepresentation):
     def __init__(self, config: TileCoderConfig, rng: Optional[RandomState] = None):
@@ -31,6 +31,7 @@ class TileCoder(BaseRepresentation):
 
         self._tiles: Any = _normalize_tiles(c.tiles, c.dims)
         self._input_ranges = _normalize_scalars(ranges)
+        self._bound_strats = _normalize_bounds(c.bound, c.dims)
         self._tiling_offsets: Array = np.array([ self._build_offset(ntl) for ntl in range(c.tilings) ])
         self._total_tiles = int(c.tilings * self._tiles.prod())
 
@@ -54,7 +55,7 @@ class TileCoder(BaseRepresentation):
 
     def get_indices(self, pos: npt.ArrayLike):
         pos_ = np.asarray(pos, dtype=np.float64)
-        return get_tc_indices(self._c.dims, self._tiles, self._c.tilings, self._input_ranges, self._tiling_offsets, pos_)
+        return get_tc_indices(self._c.dims, self._tiles, self._c.tilings, self._input_ranges, self._tiling_offsets, self._bound_strats, pos_)
 
     def features(self):
         return self._total_tiles
@@ -76,6 +77,12 @@ def _normalize_tiles(tiles: int | Iterable[int], dims: int) -> np.ndarray:
         tiles = [tiles for _ in range(dims)]
 
     return np.fromiter(tiles, dtype=np.uint32, count=dims)
+
+def _normalize_bounds(bound_strat: str | Sequence[str], dims: int) -> List[str]:
+    if isinstance(bound_strat, str):
+        return [bound_strat] * dims
+
+    return list(bound_strat)
 
 def _normalize_scalars(sc: Sequence[Tuple[float, float] | None]):
     out: List[Tuple[float, float]] = []
