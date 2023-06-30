@@ -1,7 +1,7 @@
 [tool]
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "4.0.2"
+version = "4.1.0"
 tag_format = "$version"
 version_files = ["pyproject.toml", "README.md"]
 
@@ -22,7 +22,7 @@ dev = [
     "commitizen>=2.39.1",
     "pre-commit>=2.21.0",
     "build>=0.10.0",
-    "twine>=4.0.2",
+    "twine>=4.1.0",
 ]
 
 [tool.mypy]
@@ -30,7 +30,7 @@ mypy_path = "typings"
 
 [project]
 name = "PyFixedReps-andnp"
-version = "4.0.2"
+version = "4.1.0"
 description = ""
 authors = [
     {name = "Andy Patterson", email = "andnpatterson@gmail.com"},
