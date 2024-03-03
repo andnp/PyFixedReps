@@ -9,14 +9,12 @@ git config user.name "github-action"
 
 git fetch --all --tags
 
-git checkout -f master
+git checkout -f main
 
 # bump the version
 cz bump --no-verify --yes --check-consistency
 
-# push to pypi repository
-pdm build
-python -m twine upload -u __token__ -p ${PYPI_TOKEN} --non-interactive dist/*
-
-git push
-git push --tags
+pip install uv
+uv pip compile --extra=dev pyproject.toml -o requirements.txt
+git add requirements.txt
+git commit -m "ci: update requirements" || echo "No changes to commit"

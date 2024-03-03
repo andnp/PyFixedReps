@@ -1,0 +1,40 @@
+name: Benchmark
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  benchmark:
+    name: Run pytest-benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: 'pip'
+
+      - name: Run benchmark
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          echo PATH=$PATH >> $GITHUB_ENV
+          maturin develop --release
+          pytest --benchmark-json output.json
+
+      - name: Store benchmark result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          name: Python Benchmark with pytest-benchmark
+          tool: 'pytest'
+          output-file-path: output.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          alert-threshold: '130%'
+          comment-on-alert: true
+          summary-always: true
+          fail-on-alert: true
+          alert-comment-cc-users: '@andnp'
