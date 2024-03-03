@@ -2,6 +2,8 @@
 Short for: Python Fixed Representations.
 This is a collection of unit tested implementations of common fixed representations commonly used with linear (in features) RL systems.
 
+[Benchmarks](https://andnp.github.io/PyFixedReps/dev/bench/)
+
 ## Installing
 Can be installed using `pip` by including this in your `requirements.txt`:
 ```
