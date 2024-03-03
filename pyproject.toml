@@ -1,7 +1,7 @@
 [tool]
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "4.1.0"
+version = "4.1.1"
 tag_format = "$version"
 version_files = ["pyproject.toml", "README.md"]
 
@@ -14,7 +14,7 @@ module-name = "PyFixedReps.rust"
 
 [project]
 name = "PyFixedReps-andnp"
-version = "4.1.0"
+version = "4.1.1"
 description = ""
 authors = [
     {name = "Andy Patterson", email = "andnpatterson@gmail.com"},
