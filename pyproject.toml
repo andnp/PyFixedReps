@@ -5,28 +5,12 @@ version = "4.1.0"
 tag_format = "$version"
 version_files = ["pyproject.toml", "README.md"]
 
-[tool.pdm]
-[[tool.pdm.source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
-
-[[tool.pdm.source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
-[tool.pdm.dev-dependencies]
-dev = [
-    "mypy>=0.991",
-    "flake8>=6.0.0",
-    "commitizen>=2.39.1",
-    "pre-commit>=2.21.0",
-    "build>=0.10.0",
-    "twine>=4.1.0",
-]
-
 [tool.mypy]
 mypy_path = "typings"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "PyFixedReps.rust"
 
 [project]
 name = "PyFixedReps-andnp"
@@ -38,12 +22,29 @@ authors = [
 dependencies = [
     "numpy>=1.23.5",
     "numba>=0.56.4",
-    "tile-coder-rs>=0.4.0",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.13"
 readme = "README.md"
 license = {text = "MIT"}
 
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pip",
+    "mypy",
+    "ruff",
+    "commitizen",
+    "pre-commit",
+    "pytest>=7.3,<9.0",
+    "pytest-benchmark~=4.0",
+    "maturin~=1.4.0",
+]
+
 [build-system]
-requires = ["pdm-pep517>=1.0"]
-build-backend = "pdm.pep517.api"
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"

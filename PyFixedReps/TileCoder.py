@@ -1,9 +1,9 @@
 import numpy as np
 import numpy.typing as npt
 from dataclasses import dataclass
-from tile_coder_rs import get_tc_indices
 from typing import Any, Iterable, List, Optional, Sequence, Tuple
 from PyFixedReps.BaseRepresentation import Array, BaseRepresentation
+from PyFixedReps.rust import get_tc_indices
 
 Range = Tuple[float, float]
 RandomState = np.random.RandomState
