@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1710169026150,
+  "lastUpdate": 1710169040183,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -93,6 +93,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.6292782244645504e-7",
             "extra": "mean: 4.209663479513823 usec\nrounds: 16941"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3550c59c7be134939b98e210f013fdefce420842",
+          "message": "Merge pull request #10 from andnp/dependabot/pip/packaging-24.0\n\nchore(deps): bump packaging from 23.2 to 24.0",
+          "timestamp": "2024-03-11T08:56:23-06:00",
+          "tree_id": "dd9450f8223ab38ea7f3ae6094a1242b4c29370f",
+          "url": "https://github.com/andnp/PyFixedReps/commit/3550c59c7be134939b98e210f013fdefce420842"
+        },
+        "date": 1710169039768,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 227564.02208122663,
+            "unit": "iter/sec",
+            "range": "stddev: 5.136164565365527e-7",
+            "extra": "mean: 4.394367751344544 usec\nrounds: 16658"
           }
         ]
       }
