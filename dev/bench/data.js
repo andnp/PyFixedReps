@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1709508671761,
+  "lastUpdate": 1710169026150,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -62,6 +62,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.008836046408854e-7",
             "extra": "mean: 4.324988479343395 usec\nrounds: 24304"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "59e909ba1a55b0e8d184a9c86e8518347531e51d",
+          "message": "Merge pull request #11 from andnp/dependabot/pip/importlib-metadata-7.0.2\n\nchore(deps): bump importlib-metadata from 7.0.1 to 7.0.2",
+          "timestamp": "2024-03-11T08:56:02-06:00",
+          "tree_id": "b258557bba0d566d7d6ce61187e3bf8801be0d81",
+          "url": "https://github.com/andnp/PyFixedReps/commit/59e909ba1a55b0e8d184a9c86e8518347531e51d"
+        },
+        "date": 1710169025247,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 237548.67933421853,
+            "unit": "iter/sec",
+            "range": "stddev: 4.6292782244645504e-7",
+            "extra": "mean: 4.209663479513823 usec\nrounds: 16941"
           }
         ]
       }
