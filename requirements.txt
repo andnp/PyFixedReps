@@ -36,7 +36,7 @@ nodeenv==1.8.0
 numba==0.59.0
 numpy==1.26.4
     # via numba
-packaging==23.2
+packaging==24.0
     # via
     #   commitizen
     #   pytest
