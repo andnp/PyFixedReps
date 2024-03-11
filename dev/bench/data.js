@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1710169040183,
+  "lastUpdate": 1710169050871,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -124,6 +124,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.136164565365527e-7",
             "extra": "mean: 4.394367751344544 usec\nrounds: 16658"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d80922536da5136e1e0216139829afaac2b61577",
+          "message": "Merge pull request #9 from andnp/dependabot/pip/mypy-1.9.0\n\nchore(deps): bump mypy from 1.8.0 to 1.9.0",
+          "timestamp": "2024-03-11T08:56:34-06:00",
+          "tree_id": "3c3082cc6848c36f70a701eb52afede757e41dd5",
+          "url": "https://github.com/andnp/PyFixedReps/commit/d80922536da5136e1e0216139829afaac2b61577"
+        },
+        "date": 1710169050492,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 230637.58382973092,
+            "unit": "iter/sec",
+            "range": "stddev: 4.865951381271669e-7",
+            "extra": "mean: 4.335806781336445 usec\nrounds: 16339"
           }
         ]
       }
