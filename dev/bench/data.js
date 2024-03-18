@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1710803389938,
+  "lastUpdate": 1710803397079,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -248,6 +248,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.219593882012614e-7",
             "extra": "mean: 4.389536775595455 usec\nrounds: 17063"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "52ce2bb0d38ed54bbf78420d448556548290cbc8",
+          "message": "Merge pull request #14 from andnp/dependabot/pip/setuptools-69.2.0\n\nchore(deps): bump setuptools from 69.1.1 to 69.2.0",
+          "timestamp": "2024-03-18T17:08:45-06:00",
+          "tree_id": "57d62ca670873398f0b172fdff0c9c48e9760b34",
+          "url": "https://github.com/andnp/PyFixedReps/commit/52ce2bb0d38ed54bbf78420d448556548290cbc8"
+        },
+        "date": 1710803396731,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 237828.81488615565,
+            "unit": "iter/sec",
+            "range": "stddev: 5.111539828140088e-7",
+            "extra": "mean: 4.2047049701638635 usec\nrounds: 15734"
           }
         ]
       }
