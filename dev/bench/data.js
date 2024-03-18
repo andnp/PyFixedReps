@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1710803397079,
+  "lastUpdate": 1710803416885,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -279,6 +279,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.111539828140088e-7",
             "extra": "mean: 4.2047049701638635 usec\nrounds: 15734"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b28a703c990abbdb9c35919ee1e2001297578925",
+          "message": "Merge pull request #15 from andnp/dependabot/pip/zipp-3.18.1\n\nchore(deps): bump zipp from 3.17.0 to 3.18.1",
+          "timestamp": "2024-03-18T17:09:05-06:00",
+          "tree_id": "f75ad628734790d6871ff90b07f0e7eca1154d93",
+          "url": "https://github.com/andnp/PyFixedReps/commit/b28a703c990abbdb9c35919ee1e2001297578925"
+        },
+        "date": 1710803416035,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 233335.68820293737,
+            "unit": "iter/sec",
+            "range": "stddev: 4.7410019952833047e-7",
+            "extra": "mean: 4.285671033443788 usec\nrounds: 17786"
           }
         ]
       }
