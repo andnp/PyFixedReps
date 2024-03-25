@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1711390926757,
+  "lastUpdate": 1711390935507,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -372,6 +372,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 6.133699565574339e-7",
             "extra": "mean: 4.408011840874427 usec\nrounds: 15286"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "905fa4847da22cba97f7850c5bdb05dd77295c84",
+          "message": "Merge pull request #16 from andnp/dependabot/pip/argcomplete-3.2.3\n\nchore(deps): bump argcomplete from 3.2.2 to 3.2.3",
+          "timestamp": "2024-03-25T12:20:46-06:00",
+          "tree_id": "03dcd7a739775b73bab0b384762ad74b2a1ed38d",
+          "url": "https://github.com/andnp/PyFixedReps/commit/905fa4847da22cba97f7850c5bdb05dd77295c84"
+        },
+        "date": 1711390934998,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 222859.38038795,
+            "unit": "iter/sec",
+            "range": "stddev: 6.516080085360556e-7",
+            "extra": "mean: 4.48713443544183 usec\nrounds: 15606"
           }
         ]
       }
