@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1711390935507,
+  "lastUpdate": 1711390951242,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -403,6 +403,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 6.516080085360556e-7",
             "extra": "mean: 4.48713443544183 usec\nrounds: 15606"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6c27a866033b84be6923b21bdef78128f02675d4",
+          "message": "Merge pull request #19 from andnp/dependabot/pip/pytest-8.1.1\n\nchore(deps): bump pytest from 8.1.0 to 8.1.1",
+          "timestamp": "2024-03-25T12:21:16-06:00",
+          "tree_id": "c8ade9e60e30af295d7f920aadc4b0114e6a5092",
+          "url": "https://github.com/andnp/PyFixedReps/commit/6c27a866033b84be6923b21bdef78128f02675d4"
+        },
+        "date": 1711390950313,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 233020.45356739775,
+            "unit": "iter/sec",
+            "range": "stddev: 5.04591883451755e-7",
+            "extra": "mean: 4.291468773194043 usec\nrounds: 16076"
           }
         ]
       }
