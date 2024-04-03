@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712151358229,
+  "lastUpdate": 1712151361178,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -465,6 +465,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 6.224297666457889e-7",
             "extra": "mean: 4.430403979281347 usec\nrounds: 15179"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6f5c1859390076aab9496da2027db57e9fb6fbaf",
+          "message": "Merge pull request #22 from andnp/dependabot/pip/maturin-1.5.1\n\nchore(deps): bump maturin from 1.5.0 to 1.5.1",
+          "timestamp": "2024-04-03T07:34:44-06:00",
+          "tree_id": "02ff3cf3e5b8f617b66f2613f92fc022b487765e",
+          "url": "https://github.com/andnp/PyFixedReps/commit/6f5c1859390076aab9496da2027db57e9fb6fbaf"
+        },
+        "date": 1712151360773,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 229402.56179177406,
+            "unit": "iter/sec",
+            "range": "stddev: 5.174059314393165e-7",
+            "extra": "mean: 4.359149227407878 usec\nrounds: 15922"
           }
         ]
       }
