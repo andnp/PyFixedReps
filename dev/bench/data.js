@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712151366118,
+  "lastUpdate": 1712151370444,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -527,6 +527,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.777304796634252e-7",
             "extra": "mean: 4.366447223590265 usec\nrounds: 15831"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9d42967a302709f0e479bae70997806b22a32eb5",
+          "message": "Merge pull request #23 from andnp/dependabot/pip/pre-commit-3.7.0\n\nchore(deps): bump pre-commit from 3.6.2 to 3.7.0",
+          "timestamp": "2024-04-03T07:34:58-06:00",
+          "tree_id": "b45889fe60e18d194d033078001b0ba6d389e9c5",
+          "url": "https://github.com/andnp/PyFixedReps/commit/9d42967a302709f0e479bae70997806b22a32eb5"
+        },
+        "date": 1712151369516,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 230362.05027598317,
+            "unit": "iter/sec",
+            "range": "stddev: 6.658946827032118e-7",
+            "extra": "mean: 4.340992792875212 usec\nrounds: 16650"
           }
         ]
       }
