@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1711390951242,
+  "lastUpdate": 1712151358229,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -434,6 +434,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.04591883451755e-7",
             "extra": "mean: 4.291468773194043 usec\nrounds: 16076"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "990d7549970e51accd68666b5ab711809509007d",
+          "message": "Merge pull request #21 from andnp/dependabot/pip/numba-0.59.1\n\nchore(deps): bump numba from 0.59.0 to 0.59.1",
+          "timestamp": "2024-04-03T07:34:31-06:00",
+          "tree_id": "31a6a630468e8995e862af991201d2091bdb71a4",
+          "url": "https://github.com/andnp/PyFixedReps/commit/990d7549970e51accd68666b5ab711809509007d"
+        },
+        "date": 1712151357739,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 225713.0511521004,
+            "unit": "iter/sec",
+            "range": "stddev: 6.224297666457889e-7",
+            "extra": "mean: 4.430403979281347 usec\nrounds: 15179"
           }
         ]
       }
