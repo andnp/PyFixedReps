@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712794629079,
+  "lastUpdate": 1712794633852,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -589,6 +589,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.638056919715492e-7",
             "extra": "mean: 4.62206409165203 usec\nrounds: 14136"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e40efa607b48d6e5521f9f8c43370d996c3b900a",
+          "message": "Merge pull request #26 from andnp/dependabot/pip/commitizen-3.21.3\n\nchore(deps): bump commitizen from 3.20.0 to 3.21.3",
+          "timestamp": "2024-04-10T20:16:19-04:00",
+          "tree_id": "61a2b9ee467334c9013730b2ad6ed00e5ea98fc7",
+          "url": "https://github.com/andnp/PyFixedReps/commit/e40efa607b48d6e5521f9f8c43370d996c3b900a"
+        },
+        "date": 1712794632833,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 232087.17982837767,
+            "unit": "iter/sec",
+            "range": "stddev: 5.477869878367665e-7",
+            "extra": "mean: 4.308725715653374 usec\nrounds: 16523"
           }
         ]
       }
