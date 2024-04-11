@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712151370444,
+  "lastUpdate": 1712794629079,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -558,6 +558,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 6.658946827032118e-7",
             "extra": "mean: 4.340992792875212 usec\nrounds: 16650"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "83bf572511153da47c81a1f486d11d8c62fe1dd7",
+          "message": "Merge pull request #27 from andnp/dependabot/pip/filelock-3.13.3\n\nchore(deps): bump filelock from 3.13.1 to 3.13.3",
+          "timestamp": "2024-04-10T20:16:08-04:00",
+          "tree_id": "9f204934d28239c35ed63cd136df62294d26bf44",
+          "url": "https://github.com/andnp/PyFixedReps/commit/83bf572511153da47c81a1f486d11d8c62fe1dd7"
+        },
+        "date": 1712794628715,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 216353.55550480422,
+            "unit": "iter/sec",
+            "range": "stddev: 5.638056919715492e-7",
+            "extra": "mean: 4.62206409165203 usec\nrounds: 14136"
           }
         ]
       }
