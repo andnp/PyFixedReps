@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712794652373,
+  "lastUpdate": 1712794668127,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -651,6 +651,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.053812089943356e-7",
             "extra": "mean: 4.486882236464203 usec\nrounds: 15633"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e512c6e6edf11655bb4c3feaa9b1be761b910b3c",
+          "message": "Merge pull request #24 from andnp/dependabot/pip/ruff-0.3.5\n\nchore(deps): bump ruff from 0.3.4 to 0.3.5",
+          "timestamp": "2024-04-10T20:16:36-04:00",
+          "tree_id": "382ffae0eb84feb082769db54b47f58da266dd3b",
+          "url": "https://github.com/andnp/PyFixedReps/commit/e512c6e6edf11655bb4c3feaa9b1be761b910b3c"
+        },
+        "date": 1712794667615,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 226737.3201974886,
+            "unit": "iter/sec",
+            "range": "stddev: 4.901998222474825e-7",
+            "extra": "mean: 4.410389957546461 usec\nrounds: 15076"
           }
         ]
       }
