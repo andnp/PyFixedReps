@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712794633852,
+  "lastUpdate": 1712794652373,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -620,6 +620,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.477869878367665e-7",
             "extra": "mean: 4.308725715653374 usec\nrounds: 16523"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bd8d26369dac8c6528b9cfe1f4f58968f3b755a2",
+          "message": "Merge pull request #25 from andnp/dependabot/pip/typing-extensions-4.11.0\n\nchore(deps): bump typing-extensions from 4.10.0 to 4.11.0",
+          "timestamp": "2024-04-10T20:16:28-04:00",
+          "tree_id": "2e064780dcea47031fc5ea638939e646d8f987e6",
+          "url": "https://github.com/andnp/PyFixedReps/commit/bd8d26369dac8c6528b9cfe1f4f58968f3b755a2"
+        },
+        "date": 1712794651977,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 222871.90688294725,
+            "unit": "iter/sec",
+            "range": "stddev: 5.053812089943356e-7",
+            "extra": "mean: 4.486882236464203 usec\nrounds: 15633"
           }
         ]
       }
