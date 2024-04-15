@@ -59,7 +59,7 @@ pyyaml==6.0.1
     #   pre-commit
 questionary==2.0.1
     # via commitizen
-ruff==0.3.5
+ruff==0.3.7
 setuptools==69.2.0
     # via nodeenv
 termcolor==2.4.0
