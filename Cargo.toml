@@ -14,4 +14,4 @@ hashbrown = { version = "0.14.3", features = ["serde"] }
 ndarray = { version = "0.15.6", features = ["serde"] }
 numpy = "0.20.0"
 pyo3 = { version = "0.20.3", features = ["extension-module", "generate-import-lib"] }
-serde = { version = "1.0.197", features = ["derive"] }
+serde = { version = "1.0.198", features = ["derive"] }
