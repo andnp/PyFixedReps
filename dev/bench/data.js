@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713211705386,
+  "lastUpdate": 1713806040346,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -775,6 +775,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.846880735676691e-7",
             "extra": "mean: 4.452855114734473 usec\nrounds: 16482"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8bab39ab3347645bccaf8c39609ac68b2d81d11e",
+          "message": "Merge pull request #35 from andnp/dependabot/cargo/serde-1.0.198\n\nchore(deps): bump serde from 1.0.197 to 1.0.198",
+          "timestamp": "2024-04-22T11:12:55-06:00",
+          "tree_id": "024602ee767549c61a051c66523da76d1c591df5",
+          "url": "https://github.com/andnp/PyFixedReps/commit/8bab39ab3347645bccaf8c39609ac68b2d81d11e"
+        },
+        "date": 1713806039810,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 228877.80583549844,
+            "unit": "iter/sec",
+            "range": "stddev: 4.687556633798251e-7",
+            "extra": "mean: 4.369143597604789 usec\nrounds: 16595"
           }
         ]
       }
