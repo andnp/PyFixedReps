@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713806041531,
+  "lastUpdate": 1713806055703,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -837,6 +837,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.901284715267213e-7",
             "extra": "mean: 4.350372409164683 usec\nrounds: 16259"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3eb0a386c35998123a38217392c47d0009d85691",
+          "message": "Merge pull request #33 from andnp/dependabot/pip/pluggy-1.5.0\n\nchore(deps): bump pluggy from 1.4.0 to 1.5.0",
+          "timestamp": "2024-04-22T11:13:19-06:00",
+          "tree_id": "fd4c6750532085898611b3154cea8078ac0d9cc6",
+          "url": "https://github.com/andnp/PyFixedReps/commit/3eb0a386c35998123a38217392c47d0009d85691"
+        },
+        "date": 1713806055153,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 229840.60466273973,
+            "unit": "iter/sec",
+            "range": "stddev: 5.308280552446713e-7",
+            "extra": "mean: 4.350841320955302 usec\nrounds: 16442"
           }
         ]
       }
