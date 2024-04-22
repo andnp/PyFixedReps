@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713806055703,
+  "lastUpdate": 1713806065768,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -868,6 +868,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.308280552446713e-7",
             "extra": "mean: 4.350841320955302 usec\nrounds: 16442"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fb45af277d3e5cb29ae69a0964dc9981d2459d71",
+          "message": "Merge pull request #32 from andnp/dependabot/pip/virtualenv-20.25.3\n\nchore(deps): bump virtualenv from 20.25.1 to 20.25.3",
+          "timestamp": "2024-04-22T11:13:29-06:00",
+          "tree_id": "e11d0d6993876dbba33f815176650096ca3f6e4d",
+          "url": "https://github.com/andnp/PyFixedReps/commit/fb45af277d3e5cb29ae69a0964dc9981d2459d71"
+        },
+        "date": 1713806064876,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 227096.62920967277,
+            "unit": "iter/sec",
+            "range": "stddev: 4.3452937763173e-7",
+            "extra": "mean: 4.403411902149919 usec\nrounds: 15846"
           }
         ]
       }
