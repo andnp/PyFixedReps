@@ -9,7 +9,7 @@ charset-normalizer==3.3.2
 colorama==0.4.6
     # via commitizen
 commitizen==3.24.0
-decli==0.6.1
+decli==0.6.2
     # via commitizen
 distlib==0.3.8
     # via virtualenv
