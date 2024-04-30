@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714445127277,
+  "lastUpdate": 1714445133228,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -992,6 +992,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 9.718779504031432e-7",
             "extra": "mean: 4.465268052288082 usec\nrounds: 15635"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "febb950abdd1572cab7821b3fb06e9045a48ef8f",
+          "message": "Merge pull request #39 from andnp/dependabot/cargo/hashbrown-0.14.5\n\nchore(deps): bump hashbrown from 0.14.3 to 0.14.5",
+          "timestamp": "2024-04-29T20:44:40-06:00",
+          "tree_id": "8c39d3eb257107c28278f81cf33dfa22acbcf182",
+          "url": "https://github.com/andnp/PyFixedReps/commit/febb950abdd1572cab7821b3fb06e9045a48ef8f"
+        },
+        "date": 1714445132930,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 224868.00728324594,
+            "unit": "iter/sec",
+            "range": "stddev: 5.070571777340836e-7",
+            "extra": "mean: 4.447053238393268 usec\nrounds: 16567"
           }
         ]
       }
