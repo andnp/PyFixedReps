@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714445106190,
+  "lastUpdate": 1714445120622,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -930,6 +930,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.15880803669986e-7",
             "extra": "mean: 4.290111311056545 usec\nrounds: 16117"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "632bee7185f25ad455d67930f6bd84eea3604bbb",
+          "message": "Merge pull request #37 from andnp/dependabot/pip/platformdirs-4.2.1\n\nchore(deps): bump platformdirs from 4.2.0 to 4.2.1",
+          "timestamp": "2024-04-29T20:44:21-06:00",
+          "tree_id": "2e47b5ae8a83ac6471a4a5c70dea13edcb9c8ded",
+          "url": "https://github.com/andnp/PyFixedReps/commit/632bee7185f25ad455d67930f6bd84eea3604bbb"
+        },
+        "date": 1714445119738,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 211805.30075005532,
+            "unit": "iter/sec",
+            "range": "stddev: 8.756000319523418e-7",
+            "extra": "mean: 4.7213171552305395 usec\nrounds: 16339"
           }
         ]
       }
