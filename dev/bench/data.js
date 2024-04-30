@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713806065768,
+  "lastUpdate": 1714445106190,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -899,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.3452937763173e-7",
             "extra": "mean: 4.403411902149919 usec\nrounds: 15846"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "40744ef0b6269212392101bf22d2137f4d50ee70",
+          "message": "Merge pull request #36 from andnp/dependabot/pip/decli-0.6.2\n\nchore(deps): bump decli from 0.6.1 to 0.6.2",
+          "timestamp": "2024-04-29T20:44:11-06:00",
+          "tree_id": "436378fa61d957e6a388ecc67ddc8751becf7a40",
+          "url": "https://github.com/andnp/PyFixedReps/commit/40744ef0b6269212392101bf22d2137f4d50ee70"
+        },
+        "date": 1714445105726,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 233094.18509090514,
+            "unit": "iter/sec",
+            "range": "stddev: 5.15880803669986e-7",
+            "extra": "mean: 4.290111311056545 usec\nrounds: 16117"
           }
         ]
       }
