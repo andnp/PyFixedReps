@@ -41,7 +41,7 @@ packaging==24.0
     #   commitizen
     #   pytest
 pip==24.0
-platformdirs==4.2.0
+platformdirs==4.2.1
     # via virtualenv
 pluggy==1.5.0
     # via pytest
