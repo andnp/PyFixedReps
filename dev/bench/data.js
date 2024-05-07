@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715052036627,
+  "lastUpdate": 1715052040561,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1147,6 +1147,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 6.25891430450286e-7",
             "extra": "mean: 4.384922554020692 usec\nrounds: 17651"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "aa9275adab583308de57837cfd1029bf350a1ca5",
+          "message": "chore(deps): bump mypy from 1.9.0 to 1.10.0\n\nBumps [mypy](https://github.com/python/mypy) from 1.9.0 to 1.10.0.\n- [Changelog](https://github.com/python/mypy/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/python/mypy/compare/1.9.0...v1.10.0)\n\n---\nupdated-dependencies:\n- dependency-name: mypy\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-05-06T21:19:44-06:00",
+          "tree_id": "6a1b9d09fb77a98757ebe7de13645b90cbcef5a9",
+          "url": "https://github.com/andnp/PyFixedReps/commit/aa9275adab583308de57837cfd1029bf350a1ca5"
+        },
+        "date": 1715052040209,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 230631.5302872423,
+            "unit": "iter/sec",
+            "range": "stddev: 4.303998989433729e-7",
+            "extra": "mean: 4.335920586203198 usec\nrounds: 16924"
           }
         ]
       }
