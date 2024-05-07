@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715052006485,
+  "lastUpdate": 1715052015248,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1085,6 +1085,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.66329312653088e-7",
             "extra": "mean: 4.44776878423917 usec\nrounds: 38929"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "2b24d4f90afff33b9b279ebed626a23edb1b5ab4",
+          "message": "chore(deps): bump identify from 2.5.35 to 2.5.36\n\nBumps [identify](https://github.com/pre-commit/identify) from 2.5.35 to 2.5.36.\n- [Commits](https://github.com/pre-commit/identify/compare/v2.5.35...v2.5.36)\n\n---\nupdated-dependencies:\n- dependency-name: identify\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-05-06T21:19:23-06:00",
+          "tree_id": "3cdb346dd29175312586c8ded1c4b9859ff84277",
+          "url": "https://github.com/andnp/PyFixedReps/commit/2b24d4f90afff33b9b279ebed626a23edb1b5ab4"
+        },
+        "date": 1715052014777,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 230607.70853334945,
+            "unit": "iter/sec",
+            "range": "stddev: 4.298820076994028e-7",
+            "extra": "mean: 4.33636848637861 usec\nrounds: 29841"
           }
         ]
       }
