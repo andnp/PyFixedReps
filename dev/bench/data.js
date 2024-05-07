@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715052015248,
+  "lastUpdate": 1715052036627,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1116,6 +1116,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.298820076994028e-7",
             "extra": "mean: 4.33636848637861 usec\nrounds: 29841"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "f40824ca7cf44d85214417cf8985effb3b74798d",
+          "message": "chore(deps): bump ruff from 0.3.7 to 0.4.3\n\nBumps [ruff](https://github.com/astral-sh/ruff) from 0.3.7 to 0.4.3.\n- [Release notes](https://github.com/astral-sh/ruff/releases)\n- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/astral-sh/ruff/compare/v0.3.7...v0.4.3)\n\n---\nupdated-dependencies:\n- dependency-name: ruff\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-05-06T21:19:34-06:00",
+          "tree_id": "e0e708bb9147f27adb065a682011ada7b37f4f17",
+          "url": "https://github.com/andnp/PyFixedReps/commit/f40824ca7cf44d85214417cf8985effb3b74798d"
+        },
+        "date": 1715052036118,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 228054.19883255733,
+            "unit": "iter/sec",
+            "range": "stddev: 6.25891430450286e-7",
+            "extra": "mean: 4.384922554020692 usec\nrounds: 17651"
           }
         ]
       }
