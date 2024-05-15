@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715808419407,
+  "lastUpdate": 1715808431843,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1209,6 +1209,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.080524365227828e-7",
             "extra": "mean: 4.324707394307798 usec\nrounds: 16107"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "b80b87b871b4fd309ac37d8ac2552388e768746c",
+          "message": "chore(deps): bump pre-commit from 3.7.0 to 3.7.1\n\nBumps [pre-commit](https://github.com/pre-commit/pre-commit) from 3.7.0 to 3.7.1.\n- [Release notes](https://github.com/pre-commit/pre-commit/releases)\n- [Changelog](https://github.com/pre-commit/pre-commit/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/pre-commit/pre-commit/compare/v3.7.0...v3.7.1)\n\n---\nupdated-dependencies:\n- dependency-name: pre-commit\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-05-15T15:26:10-06:00",
+          "tree_id": "8fbeaf01dbe7871570fad492968dceac2948ae5d",
+          "url": "https://github.com/andnp/PyFixedReps/commit/b80b87b871b4fd309ac37d8ac2552388e768746c"
+        },
+        "date": 1715808431495,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 233163.23425837673,
+            "unit": "iter/sec",
+            "range": "stddev: 4.50512529249278e-7",
+            "extra": "mean: 4.28884083367905 usec\nrounds: 17133"
           }
         ]
       }
