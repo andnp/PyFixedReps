@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717448331901,
+  "lastUpdate": 1717448353342,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1426,6 +1426,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.881138028583109e-7",
             "extra": "mean: 4.2545114754879645 usec\nrounds: 16165"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "c667faf7600a07cfa040d43eaa30e571d3417210",
+          "message": "chore(deps): bump commitizen from 3.25.0 to 3.27.0\n\nBumps [commitizen](https://github.com/commitizen-tools/commitizen) from 3.25.0 to 3.27.0.\n- [Release notes](https://github.com/commitizen-tools/commitizen/releases)\n- [Changelog](https://github.com/commitizen-tools/commitizen/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/commitizen-tools/commitizen/compare/v3.25.0...v3.27.0)\n\n---\nupdated-dependencies:\n- dependency-name: commitizen\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-06-03T14:58:05-06:00",
+          "tree_id": "a24766b59212a072fff188b32b83ec64e2784e18",
+          "url": "https://github.com/andnp/PyFixedReps/commit/c667faf7600a07cfa040d43eaa30e571d3417210"
+        },
+        "date": 1717448352480,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 231716.54592185272,
+            "unit": "iter/sec",
+            "range": "stddev: 5.224476822176742e-7",
+            "extra": "mean: 4.315617583637096 usec\nrounds: 15776"
           }
         ]
       }
