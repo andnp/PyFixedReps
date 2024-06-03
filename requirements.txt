@@ -46,7 +46,7 @@ platformdirs==4.2.1
 pluggy==1.5.0
     # via pytest
 pre-commit==3.7.1
-prompt-toolkit==3.0.36
+prompt-toolkit==3.0.45
     # via questionary
 py-cpuinfo==9.0.0
     # via pytest-benchmark
