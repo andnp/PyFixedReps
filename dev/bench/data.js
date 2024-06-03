@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717448262584,
+  "lastUpdate": 1717448331901,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1395,6 +1395,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0000063315544297847",
             "extra": "mean: 7.165491147950175 usec\nrounds: 11636"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "2a666aa9f0c6cb08fc14e72b15c30a4d0a01743b",
+          "message": "chore(deps): bump zipp from 3.18.1 to 3.19.1\n\nBumps [zipp](https://github.com/jaraco/zipp) from 3.18.1 to 3.19.1.\n- [Release notes](https://github.com/jaraco/zipp/releases)\n- [Changelog](https://github.com/jaraco/zipp/blob/main/NEWS.rst)\n- [Commits](https://github.com/jaraco/zipp/compare/v3.18.1...v3.19.1)\n\n---\nupdated-dependencies:\n- dependency-name: zipp\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-06-03T14:57:48-06:00",
+          "tree_id": "1efea69a8979ad1eae83d7fc37e7053fcbd002f9",
+          "url": "https://github.com/andnp/PyFixedReps/commit/2a666aa9f0c6cb08fc14e72b15c30a4d0a01743b"
+        },
+        "date": 1717448331512,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 235044.61223372456,
+            "unit": "iter/sec",
+            "range": "stddev: 4.881138028583109e-7",
+            "extra": "mean: 4.2545114754879645 usec\nrounds: 16165"
           }
         ]
       }
