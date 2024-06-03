@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715808473468,
+  "lastUpdate": 1717448175570,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1302,6 +1302,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.5789598047359377e-7",
             "extra": "mean: 4.2447477500358755 usec\nrounds: 15889"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "76a17800cc0da699e2a9f2dc0a8ddb70ee96df12",
+          "message": "chore(deps): bump virtualenv from 20.26.1 to 20.26.2\n\nBumps [virtualenv](https://github.com/pypa/virtualenv) from 20.26.1 to 20.26.2.\n- [Release notes](https://github.com/pypa/virtualenv/releases)\n- [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)\n- [Commits](https://github.com/pypa/virtualenv/compare/20.26.1...20.26.2)\n\n---\nupdated-dependencies:\n- dependency-name: virtualenv\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-06-03T14:55:10-06:00",
+          "tree_id": "efe722c00aa317ae39c5317efe67850bfb0b95b6",
+          "url": "https://github.com/andnp/PyFixedReps/commit/76a17800cc0da699e2a9f2dc0a8ddb70ee96df12"
+        },
+        "date": 1717448175004,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 239372.16166711194,
+            "unit": "iter/sec",
+            "range": "stddev: 4.682829748339427e-7",
+            "extra": "mean: 4.177595226761046 usec\nrounds: 16592"
           }
         ]
       }
