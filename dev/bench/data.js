@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717448175570,
+  "lastUpdate": 1717448197478,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1333,6 +1333,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.682829748339427e-7",
             "extra": "mean: 4.177595226761046 usec\nrounds: 16592"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "4a30ea7773a49588ab9be9e15409bc616135bf3a",
+          "message": "chore(deps): bump setuptools from 69.2.0 to 70.0.0\n\nBumps [setuptools](https://github.com/pypa/setuptools) from 69.2.0 to 70.0.0.\n- [Release notes](https://github.com/pypa/setuptools/releases)\n- [Changelog](https://github.com/pypa/setuptools/blob/main/NEWS.rst)\n- [Commits](https://github.com/pypa/setuptools/compare/v69.2.0...v70.0.0)\n\n---\nupdated-dependencies:\n- dependency-name: setuptools\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-06-03T14:55:39-06:00",
+          "tree_id": "3eed9ebc0f8ff36d7313ade99fa14746d1d57da1",
+          "url": "https://github.com/andnp/PyFixedReps/commit/4a30ea7773a49588ab9be9e15409bc616135bf3a"
+        },
+        "date": 1717448197103,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 229639.57260505963,
+            "unit": "iter/sec",
+            "range": "stddev: 4.6422915706839074e-7",
+            "extra": "mean: 4.354650153089369 usec\nrounds: 36576"
           }
         ]
       }
