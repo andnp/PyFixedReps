@@ -50,7 +50,7 @@ prompt-toolkit==3.0.36
     # via questionary
 py-cpuinfo==9.0.0
     # via pytest-benchmark
-pytest==8.1.1
+pytest==8.2.2
     # via pytest-benchmark
 pytest-benchmark==4.0.0
 pyyaml==6.0.1
