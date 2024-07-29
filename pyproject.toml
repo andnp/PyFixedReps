@@ -20,8 +20,8 @@ authors = [
     {name = "Andy Patterson", email = "andnpatterson@gmail.com"},
 ]
 dependencies = [
-    "numpy>=1.23.5",
-    "numba>=0.56.4",
+    "numpy~=1.23",
+    "numba~=0.56",
 ]
 requires-python = ">=3.10,<3.13"
 readme = "README.md"
