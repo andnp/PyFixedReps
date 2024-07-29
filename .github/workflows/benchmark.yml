@@ -25,8 +25,9 @@ jobs:
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install uv
+          uv pip compile --extra=dev pyproject.toml -o requirements.txt
+          uv pip sync requirements.txt
           echo PATH=$PATH >> $GITHUB_ENV
           maturin develop --release
           pytest --benchmark-json output.json

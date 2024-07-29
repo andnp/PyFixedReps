@@ -10,3 +10,4 @@ PyFixedReps_andnp*
 .pdm-python
 .venv/
 target/
+requirements.txt
