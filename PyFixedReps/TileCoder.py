@@ -2,7 +2,7 @@ import numpy as np
 import numpy.typing as npt
 from dataclasses import dataclass
 from typing import Any, Iterable, List, Optional, Sequence, Tuple
-from PyFixedReps.BaseRepresentation import Array, BaseRepresentation
+from PyFixedReps.BaseRepresentation import BaseRepresentation
 from PyFixedReps.rust import get_tc_indices
 
 Range = Tuple[float, float]
@@ -32,7 +32,7 @@ class TileCoder(BaseRepresentation):
         self._tiles: Any = _normalize_tiles(c.tiles, c.dims)
         self._input_ranges = _normalize_scalars(ranges)
         self._bound_strats = _normalize_bounds(c.bound, c.dims)
-        self._tiling_offsets: Array = np.array([ self._build_offset(ntl) for ntl in range(c.tilings) ])
+        self._tiling_offsets = np.array([ self._build_offset(ntl) for ntl in range(c.tilings) ])
         self._total_tiles = int(c.tilings * self._tiles.prod())
 
     # construct tiling offsets
