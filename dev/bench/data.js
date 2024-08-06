@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722966037905,
+  "lastUpdate": 1722966083299,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1550,6 +1550,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.4737067338580733e-7",
             "extra": "mean: 4.312601619405822 usec\nrounds: 15809"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "5251015286d380dfa17c0572e8ea0785c2e9f882",
+          "message": "chore(deps): update maturin requirement from <1.6,>=1.4 to >=1.4,<1.8\n\nUpdates the requirements on [maturin](https://github.com/pyo3/maturin) to permit the latest version.\n- [Release notes](https://github.com/pyo3/maturin/releases)\n- [Changelog](https://github.com/PyO3/maturin/blob/main/Changelog.md)\n- [Commits](https://github.com/pyo3/maturin/compare/v1.4.0...v1.7.0)\n\n---\nupdated-dependencies:\n- dependency-name: maturin\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-08-06T11:40:11-06:00",
+          "tree_id": "5b7aa7ba0b969a640b58be9825a5c9286ecc8c43",
+          "url": "https://github.com/andnp/PyFixedReps/commit/5251015286d380dfa17c0572e8ea0785c2e9f882"
+        },
+        "date": 1722966082477,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 228774.20449583186,
+            "unit": "iter/sec",
+            "range": "stddev: 5.740816863051636e-7",
+            "extra": "mean: 4.371122182257307 usec\nrounds: 15616"
           }
         ]
       }
