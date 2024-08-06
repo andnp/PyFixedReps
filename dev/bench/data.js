@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722966083299,
+  "lastUpdate": 1722966128053,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1581,6 +1581,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.740816863051636e-7",
             "extra": "mean: 4.371122182257307 usec\nrounds: 15616"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "9d980e835a39863e1d3fdd8eea54b02b7c5c54ab",
+          "message": "chore(deps): bump ndarray from 0.15.6 to 0.16.0\n\nBumps [ndarray](https://github.com/rust-ndarray/ndarray) from 0.15.6 to 0.16.0.\n- [Release notes](https://github.com/rust-ndarray/ndarray/releases)\n- [Changelog](https://github.com/rust-ndarray/ndarray/blob/master/RELEASES.md)\n- [Commits](https://github.com/rust-ndarray/ndarray/compare/0.15.6...0.16.0)\n\n---\nupdated-dependencies:\n- dependency-name: ndarray\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-08-06T11:41:13-06:00",
+          "tree_id": "9da9a48356f3013ff3c8ba7906373597a6dca8cc",
+          "url": "https://github.com/andnp/PyFixedReps/commit/9d980e835a39863e1d3fdd8eea54b02b7c5c54ab"
+        },
+        "date": 1722966127771,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 212659.86746063837,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000011278767112499835",
+            "extra": "mean: 4.702344696914156 usec\nrounds: 16603"
           }
         ]
       }
