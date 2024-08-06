@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722268327156,
+  "lastUpdate": 1722966037905,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1519,6 +1519,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.434143712801875e-7",
             "extra": "mean: 4.337725198928543 usec\nrounds: 35815"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "91cc072300ea4c793cfe640c0ac9bf2eabc3860b",
+          "message": "chore(deps): update numpy requirement from ~=1.23 to >=1.23,<3.0\n\nUpdates the requirements on [numpy](https://github.com/numpy/numpy) to permit the latest version.\n- [Release notes](https://github.com/numpy/numpy/releases)\n- [Changelog](https://github.com/numpy/numpy/blob/main/doc/RELEASE_WALKTHROUGH.rst)\n- [Commits](https://github.com/numpy/numpy/compare/v1.23.0...v2.0.1)\n\n---\nupdated-dependencies:\n- dependency-name: numpy\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-08-06T11:39:46-06:00",
+          "tree_id": "13eb00f245435023a4e4a8baecea20102030e8b0",
+          "url": "https://github.com/andnp/PyFixedReps/commit/91cc072300ea4c793cfe640c0ac9bf2eabc3860b"
+        },
+        "date": 1722966037465,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 231878.59400233152,
+            "unit": "iter/sec",
+            "range": "stddev: 4.4737067338580733e-7",
+            "extra": "mean: 4.312601619405822 usec\nrounds: 15809"
           }
         ]
       }
