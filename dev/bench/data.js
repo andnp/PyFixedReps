@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724264398271,
+  "lastUpdate": 1724264416598,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1674,6 +1674,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.679560287515877e-7",
             "extra": "mean: 4.3366443864283 usec\nrounds: 16442"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "3898726ecc1278cff2a52abf13336f08612041dc",
+          "message": "chore(deps): bump serde from 1.0.206 to 1.0.208\n\nBumps [serde](https://github.com/serde-rs/serde) from 1.0.206 to 1.0.208.\n- [Release notes](https://github.com/serde-rs/serde/releases)\n- [Commits](https://github.com/serde-rs/serde/compare/v1.0.206...v1.0.208)\n\n---\nupdated-dependencies:\n- dependency-name: serde\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-08-21T12:19:23-06:00",
+          "tree_id": "6aaacb6d1cdf177ca4d9e54cbf4555ca1236fa72",
+          "url": "https://github.com/andnp/PyFixedReps/commit/3898726ecc1278cff2a52abf13336f08612041dc"
+        },
+        "date": 1724264416329,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 231020.90384248036,
+            "unit": "iter/sec",
+            "range": "stddev: 4.3965886712609703e-7",
+            "extra": "mean: 4.328612620621732 usec\nrounds: 16782"
           }
         ]
       }
