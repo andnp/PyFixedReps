@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725894593273,
+  "lastUpdate": 1728402882822,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1767,6 +1767,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 8.278617832145213e-7",
             "extra": "mean: 4.318195410059804 usec\nrounds: 38258"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "fb0b1a3c183ff2e4bcd521a9a0cf649ec9de0758",
+          "message": "chore(deps): bump hashbrown from 0.14.5 to 0.15.0\n\nBumps [hashbrown](https://github.com/rust-lang/hashbrown) from 0.14.5 to 0.15.0.\n- [Changelog](https://github.com/rust-lang/hashbrown/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/rust-lang/hashbrown/compare/v0.14.5...v0.15.0)\n\n---\nupdated-dependencies:\n- dependency-name: hashbrown\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-10-08T09:53:59-06:00",
+          "tree_id": "fd68c683874ffec4c68dac4de7dd9b078938d389",
+          "url": "https://github.com/andnp/PyFixedReps/commit/fb0b1a3c183ff2e4bcd521a9a0cf649ec9de0758"
+        },
+        "date": 1728402882366,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 240684.22781749486,
+            "unit": "iter/sec",
+            "range": "stddev: 7.018776682165894e-7",
+            "extra": "mean: 4.154821481523402 usec\nrounds: 39066"
           }
         ]
       }
