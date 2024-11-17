@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1731862256620,
+  "lastUpdate": 1731862270432,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1860,6 +1860,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 5.398761809317953e-7",
             "extra": "mean: 4.368986615398815 usec\nrounds: 15839"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "548f4c3e9065dafeccdd2564d99217878ca4548d",
+          "message": "chore(deps): update pytest-benchmark requirement from ~=4.0 to >=4,<6\n\nUpdates the requirements on [pytest-benchmark](https://github.com/ionelmc/pytest-benchmark) to permit the latest version.\n- [Changelog](https://github.com/ionelmc/pytest-benchmark/blob/master/CHANGELOG.rst)\n- [Commits](https://github.com/ionelmc/pytest-benchmark/compare/v4.0.0...v5.1.0)\n\n---\nupdated-dependencies:\n- dependency-name: pytest-benchmark\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2024-11-17T09:50:23-07:00",
+          "tree_id": "13632797363b247d638979f059e85e298337a74d",
+          "url": "https://github.com/andnp/PyFixedReps/commit/548f4c3e9065dafeccdd2564d99217878ca4548d"
+        },
+        "date": 1731862270187,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 233814.61170644625,
+            "unit": "iter/sec",
+            "range": "stddev: 3.9767104986673566e-7",
+            "extra": "mean: 4.276892674507006 usec\nrounds: 16231"
           }
         ]
       }
