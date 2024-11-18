@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1731862270432,
+  "lastUpdate": 1731902936319,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1891,6 +1891,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 3.9767104986673566e-7",
             "extra": "mean: 4.276892674507006 usec\nrounds: 16231"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "ed91a27bc5075886e86fb336ecea617317d842a4",
+          "message": "ci: use pyright instead of mypy for types",
+          "timestamp": "2024-11-17T21:08:06-07:00",
+          "tree_id": "a0da8213359c931d6528d752e456bb1f6998e74b",
+          "url": "https://github.com/andnp/PyFixedReps/commit/ed91a27bc5075886e86fb336ecea617317d842a4"
+        },
+        "date": 1731902935298,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 238150.84769161593,
+            "unit": "iter/sec",
+            "range": "stddev: 4.4160975334538044e-7",
+            "extra": "mean: 4.199019275778143 usec\nrounds: 16238"
           }
         ]
       }
