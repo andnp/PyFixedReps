@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1731902936319,
+  "lastUpdate": 1731903261762,
   "repoUrl": "https://github.com/andnp/PyFixedReps",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -1922,6 +1922,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.4160975334538044e-7",
             "extra": "mean: 4.199019275778143 usec\nrounds: 16238"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "committer": {
+            "email": "andnpatterson@gmail.com",
+            "name": "Andy Patterson",
+            "username": "andnp"
+          },
+          "distinct": true,
+          "id": "9e764c32ef14927dae6287ec8f6e12640e39b7c3",
+          "message": "ci: don't update requirements on new tag",
+          "timestamp": "2024-11-17T21:13:33-07:00",
+          "tree_id": "a678b360bacd0649e96bc1c564ee714755457955",
+          "url": "https://github.com/andnp/PyFixedReps/commit/9e764c32ef14927dae6287ec8f6e12640e39b7c3"
+        },
+        "date": 1731903260341,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/test_TileCoder.py::test_benchmark_encode",
+            "value": 225862.9921515768,
+            "unit": "iter/sec",
+            "range": "stddev: 4.4015827219292094e-7",
+            "extra": "mean: 4.427462819269212 usec\nrounds: 36874"
           }
         ]
       }
