@@ -16,21 +16,25 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Python 3.11
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: 'pip'
 
-      - name: Run benchmark
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
-          pip install uv
+          uv venv
           uv pip compile --extra=dev pyproject.toml -o requirements.txt
           uv pip sync requirements.txt
-          echo PATH=$PATH >> $GITHUB_ENV
-          maturin develop --release
-          pytest --benchmark-json output.json
+
+      - run: echo "$PWD/.venv/bin" >> $GITHUB_PATH
+
+      - name: Build rust
+        run: uv run maturin develop --release
+
+      - run: uv run pytest --benchmark-json output.json
 
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1

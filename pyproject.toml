@@ -5,8 +5,12 @@ version = "4.1.1"
 tag_format = "$version"
 version_files = ["pyproject.toml", "README.md"]
 
-[tool.mypy]
-mypy_path = "typings"
+[tool.pyright]
+include = ['src']
+venvPath = '.'
+venv = '.venv'
+typeCheckingMode = 'standard'
+useLibraryCodeForTypes = true
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
@@ -36,8 +40,8 @@ classifiers = [
 [project.optional-dependencies]
 dev = [
     "pip",
-    "mypy",
     "ruff",
+    "pyright",
     "commitizen",
     "pre-commit",
     "pytest>=7.3,<9.0",
