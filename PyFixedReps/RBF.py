@@ -1,5 +1,4 @@
 import numpy as np
-import numpy.typing as npt
 from typing import Optional
 from PyFixedReps._jit import try2jit
 from PyFixedReps.BaseRepresentation import BaseRepresentation
@@ -19,6 +18,6 @@ class RBF(BaseRepresentation):
     def features(self):
         return len(self.centers)
 
-    def encode(self, s: npt.ArrayLike, a: Optional[int] = None):
+    def encode(self, s: np.ndarray, a: Optional[int] = None):
         s = np.array(s)
         return gaussian_dist(s, self.centers, self.width)
