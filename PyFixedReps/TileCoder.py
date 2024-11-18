@@ -1,5 +1,4 @@
 import numpy as np
-import numpy.typing as npt
 from dataclasses import dataclass
 from typing import Any, Iterable, List, Optional, Sequence, Tuple
 from PyFixedReps.BaseRepresentation import BaseRepresentation
@@ -53,14 +52,14 @@ class TileCoder(BaseRepresentation):
 
         raise Exception('Unknown offset type')
 
-    def get_indices(self, pos: npt.ArrayLike):
+    def get_indices(self, pos: np.ndarray):
         pos_ = np.asarray(pos, dtype=np.float64)
         return get_tc_indices(self._c.dims, self._tiles, self._c.tilings, self._input_ranges, self._tiling_offsets, self._bound_strats, pos_)
 
     def features(self):
         return self._total_tiles
 
-    def encode(self, s: npt.ArrayLike):
+    def encode(self, s: np.ndarray):
         indices = self.get_indices(s)
         vec = np.zeros(self.features())
 

@@ -1,5 +1,5 @@
-import numpy.typing as npt
+import numpy as np
 
 class BaseRepresentation:
-    def encode(self, s: npt.ArrayLike):
+    def encode(self, s: np.ndarray):
         raise NotImplementedError()
