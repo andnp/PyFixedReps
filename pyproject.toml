@@ -46,7 +46,7 @@ dev = [
     "pre-commit",
     "pytest>=7.3,<9.0",
     "pytest-benchmark>=4,<6",
-    "maturin>=1.4,<1.8",
+    "maturin>=1.4,<1.9",
 ]
 
 [build-system]
